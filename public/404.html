@@ -9,8 +9,11 @@
   <body>
     <div id="root"></div>
     <script>
-      // Redirect all requests to index.html
-      window.location.replace(window.location.origin + '/');
+      // Load the main app script
+      const script = document.createElement('script');
+      script.src = '/src/main.tsx'; // Adjust if needed based on your Vite setup
+      script.type = 'module';
+      document.body.appendChild(script);
     </script>
   </body>
 </html>
