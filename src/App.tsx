@@ -10,15 +10,16 @@ function App() {
     <Box>
       <Flex as="nav" bg="teal.500" p="4" justify="space-between" align="center">
         {/* Home Button */}
-        <Link as={RouterLink} to="/#/" color="white" fontWeight="bold">
+        <Link as={RouterLink} to="/" color="white" fontWeight="bold">
           Home
         </Link>
 
+        {/* Other Nav Items */}
         <Flex gap="4">
-          <Link as={RouterLink} to="/#/highschool" color="white">Highschool</Link>
-          <Link as={RouterLink} to="/#/duke-robotics" color="white">Duke Robotics Club</Link>
-          <Link as={RouterLink} to="/#/head-clamp" color="white">Head Clamp</Link>
-          <Link as={RouterLink} to="/#/marrs-research" color="white">MaRRS Research</Link>
+          <Link as={RouterLink} to="/highschool" color="white">Highschool</Link>
+          <Link as={RouterLink} to="/duke-robotics" color="white">Duke Robotics Club</Link>
+          <Link as={RouterLink} to="/head-clamp" color="white">Head Clamp</Link>
+          <Link as={RouterLink} to="/marrs-research" color="white">MaRRS Research</Link>
         </Flex>
       </Flex>
 
