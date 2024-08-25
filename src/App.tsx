@@ -13,7 +13,6 @@ function App() {
         <Link as={RouterLink} to="/" color="white" fontWeight="bold">
           Home
         </Link>
-
         {/* Other Nav Items */}
         <Flex gap="4">
           <Link as={RouterLink} to="/highschool" color="white">Highschool</Link>
