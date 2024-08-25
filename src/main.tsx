@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { ChakraProvider } from '@chakra-ui/react'
-import * as ReactDOM from 'react-dom/client'
+import * as React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import * as ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -13,4 +13,4 @@ ReactDOM.createRoot(rootElement).render(
       </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>,
-)
+);
