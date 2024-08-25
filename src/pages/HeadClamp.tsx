@@ -1,5 +1,5 @@
 function HeadClamp() {
-    return <div>Duke Robotics Club Content</div>;
+    return <div>Head Clamp</div>;
   }
   
   export default HeadClamp;

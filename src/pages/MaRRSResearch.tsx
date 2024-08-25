@@ -1,5 +1,5 @@
 function MaRRSResearch() {
-    return <div>Duke Robotics Club Content</div>;
+    return <div>MaRRS Research</div>;
   }
 
 
