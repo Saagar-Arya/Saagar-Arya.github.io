@@ -4,6 +4,7 @@ import Highschool from './pages/Highschool.tsx';
 import DukeRobotics from './pages/DukeRobotics.tsx';
 import HeadClamp from './pages/HeadClamp.tsx';
 import MaRRSResearch from './pages/MaRRSResearch.tsx';
+import NotFound from './pages/NotFound'; // Import your NotFound component
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
           <Route path="/duke-robotics" element={<DukeRobotics />} />
           <Route path="/head-clamp" element={<HeadClamp />} />
           <Route path="/marrs-research" element={<MaRRSResearch />} />
+          {/* Route for Not Found page */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Box>
     </Box>
