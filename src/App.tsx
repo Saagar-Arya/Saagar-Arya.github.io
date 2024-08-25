@@ -10,11 +10,18 @@ import NotFound from './pages/NotFound.tsx'; // NotFound component
 function App() {
   return (
     <Box>
-      <Flex as="nav" bg="teal.500" p="4" justify="space-between" align="center">
+      <Flex as="nav" bg="teal.500" p="4" align="center">
+        {/* Home Button on the left */}
         <Link as={RouterLink} to="/" color="white" fontWeight="bold">
           Home
         </Link>
-        <Flex gap="4">
+
+        {/* Centering the navigation items */}
+        <Flex
+          flex="1"
+          justify="center"
+          gap="4"
+        >
           <Link as={RouterLink} to="/highschool" color="white">Highschool</Link>
           <Link as={RouterLink} to="/duke-robotics" color="white">Duke Robotics Club</Link>
           <Link as={RouterLink} to="/head-clamp" color="white">Head Clamp</Link>
