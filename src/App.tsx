@@ -1,6 +1,6 @@
 import { Box, Flex, Link, IconButton, useToast } from '@chakra-ui/react';
 import { Link as RouterLink, Route, Routes } from 'react-router-dom';
-import { FaLinkedin, FaEnvelope, FaHome} from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaHome } from 'react-icons/fa';
 import Highschool from './pages/Highschool.tsx';
 import DukeRobotics from './pages/DukeRobotics.tsx';
 import HeadClamp from './pages/HeadClamp.tsx';
@@ -24,25 +24,64 @@ function App() {
   return (
     <Box>
       <Flex as="nav" bg="teal.500" p="4" align="center" gap="4">
+        {/* Home Link with Icon */}
         <Link as={RouterLink} to="/" color="white" fontWeight="bold">
-        <IconButton
-          as="a"
-          aria-label="Home"
-          icon={<FaHome />}
-          colorScheme="teal"
-          variant="solid"
-        />
+          <IconButton
+            aria-label="Home"
+            icon={<FaHome />}
+            colorScheme="teal"
+            variant="solid"
+            bg="teal.500"
+            _hover={{ bg: "teal.700" }}
+          />
         </Link>
         
         <Flex flex="1" />
 
-        <Link as={RouterLink} to="/highschool" color="white">Highschool</Link>
-        <Link as={RouterLink} to="/duke-robotics" color="white">Duke Robotics Club</Link>
-        <Link as={RouterLink} to="/head-clamp" color="white">Head Clamp</Link>
-        <Link as={RouterLink} to="/marrs-research" color="white">MaRRS Research</Link>
+        {/* Navigation Links with Hover Box */}
+        <Link
+          as={RouterLink}
+          to="/highschool"
+          color="white"
+          p="2"
+          borderRadius="md"
+          _hover={{ bg: "teal.700" }}
+        >
+          Highschool
+        </Link>
+        <Link
+          as={RouterLink}
+          to="/duke-robotics"
+          color="white"
+          p="2"
+          borderRadius="md"
+          _hover={{ bg: "teal.700" }}
+        >
+          Duke Robotics Club
+        </Link>
+        <Link
+          as={RouterLink}
+          to="/head-clamp"
+          color="white"
+          p="2"
+          borderRadius="md"
+          _hover={{ bg: "teal.700" }}
+        >
+          Head Clamp
+        </Link>
+        <Link
+          as={RouterLink}
+          to="/marrs-research"
+          color="white"
+          p="2"
+          borderRadius="md"
+          _hover={{ bg: "teal.700" }}
+        >
+          MaRRS Research
+        </Link>
         
         <Flex flex="1" />
-        
+
         {/* LinkedIn Icon */}
         <IconButton
           as="a"
@@ -53,6 +92,8 @@ function App() {
           icon={<FaLinkedin />}
           colorScheme="teal"
           variant="solid"
+          bg="teal.500"
+          _hover={{ bg: "teal.700" }}
         />
 
         {/* Email Icon */}
@@ -61,6 +102,8 @@ function App() {
           icon={<FaEnvelope />}
           colorScheme="teal"
           variant="solid"
+          bg="teal.500"
+          _hover={{ bg: "teal.700" }}
           onClick={handleCopyEmail}
         />
       </Flex>
