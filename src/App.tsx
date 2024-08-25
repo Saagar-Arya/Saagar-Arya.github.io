@@ -16,10 +16,10 @@ function App() {
 
         {/* Other Nav Items */}
         <Flex gap="4">
-          <Link as={RouterLink} to="/highschool" color="white">Highschool</Link>
-          <Link as={RouterLink} to="/duke-robotics" color="white">Duke Robotics Club</Link>
-          <Link as={RouterLink} to="/head-clamp" color="white">Head Clamp</Link>
-          <Link as={RouterLink} to="/marrs-research" color="white">MaRRS Research</Link>
+          <Link as={RouterLink} to="highschool" color="white">Highschool</Link>
+          <Link as={RouterLink} to="duke-robotics" color="white">Duke Robotics Club</Link>
+          <Link as={RouterLink} to="head-clamp" color="white">Head Clamp</Link>
+          <Link as={RouterLink} to="marrs-research" color="white">MaRRS Research</Link>
         </Flex>
       </Flex>
 
