@@ -4,18 +4,16 @@ import Highschool from './pages/Highschool.tsx';
 import DukeRobotics from './pages/DukeRobotics.tsx';
 import HeadClamp from './pages/HeadClamp.tsx';
 import MaRRSResearch from './pages/MaRRSResearch.tsx';
-import NotFound from './pages/NotFound'; // Import your NotFound component
+import Home from './pages/Home.tsx'; // Home component
+import NotFound from './pages/NotFound.tsx'; // NotFound component
 
 function App() {
   return (
     <Box>
       <Flex as="nav" bg="teal.500" p="4" justify="space-between" align="center">
-        {/* Home Button */}
         <Link as={RouterLink} to="/" color="white" fontWeight="bold">
           Home
         </Link>
-        
-        {/* Other Nav Items */}
         <Flex gap="4">
           <Link as={RouterLink} to="/highschool" color="white">Highschool</Link>
           <Link as={RouterLink} to="/duke-robotics" color="white">Duke Robotics Club</Link>
@@ -26,12 +24,12 @@ function App() {
 
       <Box p="4">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/highschool/*" element={<Highschool />} />
           <Route path="/duke-robotics" element={<DukeRobotics />} />
           <Route path="/head-clamp" element={<HeadClamp />} />
           <Route path="/marrs-research" element={<MaRRSResearch />} />
-          {/* Route for Not Found page */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} /> {/* Catch-all route for 404 */}
         </Routes>
       </Box>
     </Box>

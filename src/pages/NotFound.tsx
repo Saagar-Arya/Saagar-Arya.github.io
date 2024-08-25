@@ -1,10 +1,11 @@
+// src/pages/NotFound.tsx
 import { Box, Heading } from '@chakra-ui/react';
 
 const NotFound = () => {
   return (
-    <Box textAlign="center" py="20">
+    <Box>
       <Heading>404 - Page Not Found</Heading>
-      <Box mt="4">The page you are looking for does not exist.</Box>
+      <p>The page you are looking for does not exist.</p>
     </Box>
   );
 };
