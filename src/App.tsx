@@ -23,8 +23,7 @@ function App() {
 
   return (
     <Box>
-      <Flex as="nav" bg="teal.500" p="4" align="center" gap="4">
-        {/* Home Link with Icon */}
+      <Flex as="nav" bg="teal.500" p="4" align="center" gap="4" wrap="wrap">
         <Link as={RouterLink} to="/" color="white" fontWeight="bold">
           <IconButton
             aria-label="Home"
@@ -38,7 +37,6 @@ function App() {
         
         <Flex flex="1" />
 
-        {/* Navigation Links with Hover Box */}
         <Link
           as={RouterLink}
           to="/highschool"
@@ -82,7 +80,6 @@ function App() {
         
         <Flex flex="1" />
 
-        {/* LinkedIn Icon */}
         <IconButton
           as="a"
           href="https://www.linkedin.com/in/saagar-arya-261341216/"
@@ -96,7 +93,6 @@ function App() {
           _hover={{ bg: "teal.700" }}
         />
 
-        {/* Email Icon */}
         <IconButton
           aria-label="Copy Email"
           icon={<FaEnvelope />}
@@ -115,7 +111,7 @@ function App() {
           <Route path="/duke-robotics" element={<DukeRobotics />} />
           <Route path="/head-clamp" element={<HeadClamp />} />
           <Route path="/marrs-research" element={<MaRRSResearch />} />
-          <Route path="*" element={<NotFound />} /> {/* Catch-all route for 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Box>
     </Box>
