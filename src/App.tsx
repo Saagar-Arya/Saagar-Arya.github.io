@@ -73,7 +73,7 @@ function App() {
           borderRadius="md"
           _hover={{ bg: "teal.700" }}
         >
-          Highschool
+          High School
         </Link>
         <Flex flex="1" />
 
