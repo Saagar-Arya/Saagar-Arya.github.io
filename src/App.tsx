@@ -34,29 +34,7 @@ function App() {
             _hover={{ bg: "teal.700" }}
           />
         </Link>
-        
         <Flex flex="1" />
-
-        <Link
-          as={RouterLink}
-          to="/highschool"
-          color="white"
-          p="2"
-          borderRadius="md"
-          _hover={{ bg: "teal.700" }}
-        >
-          Highschool
-        </Link>
-        <Link
-          as={RouterLink}
-          to="/duke-robotics"
-          color="white"
-          p="2"
-          borderRadius="md"
-          _hover={{ bg: "teal.700" }}
-        >
-          Duke Robotics Club
-        </Link>
         <Link
           as={RouterLink}
           to="/head-clamp"
@@ -77,7 +55,26 @@ function App() {
         >
           MaRRS Research
         </Link>
-        
+        <Link
+          as={RouterLink}
+          to="/duke-robotics"
+          color="white"
+          p="2"
+          borderRadius="md"
+          _hover={{ bg: "teal.700" }}
+        >
+          Duke Robotics Club
+        </Link>
+        <Link
+          as={RouterLink}
+          to="/highschool"
+          color="white"
+          p="2"
+          borderRadius="md"
+          _hover={{ bg: "teal.700" }}
+        >
+          Highschool
+        </Link>
         <Flex flex="1" />
 
         <IconButton
