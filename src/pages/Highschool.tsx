@@ -1,32 +1,37 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
-import { Link as RouterLink, Route, Routes } from 'react-router-dom';
+import { Box, Tabs, TabList, TabPanels, Tab, TabPanel} from '@chakra-ui/react';
 import HighschoolSubpage1 from './HighschoolSubpage1';
 import HighschoolSubpage2 from './HighschoolSubpage2';
 import HighschoolSubpage3 from './HighschoolSubpage3';
 
 function Highschool() {
   return (
-    <div>
-      <Breadcrumb spacing="8px" separator=">">
-        <BreadcrumbItem>
-          <BreadcrumbLink as={RouterLink} to="/highschool/subpage1">Subpage 1</BreadcrumbLink>
-        </BreadcrumbItem>
+    <Box>
+      <Tabs variant="soft-rounded" isLazy>
+      <TabList>
+          <Tab _selected={{ bg: '#2B92BF', color: 'white' }} bg="teal.400" color="white" margin={1.5}>
+            Drone Project
+          </Tab>
+          <Tab _selected={{ bg: '#2B92BF', color: 'white' }} bg="teal.400" color="white" margin={1.5}>
+            Combat Robots
+          </Tab>
+          <Tab _selected={{ bg: '#2B92BF', color: 'white' }} bg="teal.400" color="white" margin={1.5}>
+            Flute Finger Rest Etsy & Patent
+          </Tab>
+        </TabList>
 
-        <BreadcrumbItem>
-          <BreadcrumbLink as={RouterLink} to="/highschool/subpage2">Subpage 2</BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <BreadcrumbLink as={RouterLink} to="/highschool/subpage3">Subpage 3</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
-
-      <Routes>
-        <Route path="subpage1" element={<HighschoolSubpage1 />} />
-        <Route path="subpage2" element={<HighschoolSubpage2 />} />
-        <Route path="subpage3" element={<HighschoolSubpage3 />} />
-      </Routes>
-    </div>
+        <TabPanels>
+          <TabPanel>
+             <HighschoolSubpage1 />
+          </TabPanel>
+          <TabPanel>
+            <HighschoolSubpage2 />
+          </TabPanel>
+          <TabPanel>
+            <HighschoolSubpage3 />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Box>
   );
 }
 
