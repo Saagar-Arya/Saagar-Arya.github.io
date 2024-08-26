@@ -1,7 +1,20 @@
 import { Box, Heading, Text, Image, Flex, SimpleGrid, Stack, Card, CardBody, Button, CardFooter, Divider } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Gallery from './Gallery';
 
 const Home = () => {
+  const basePath = '/Gallery/';
+
+  const imageNames = [
+    'DroneIcon.jpg',
+    'RoboSubIcon.jpg',
+    'Rover_Icon.jpg',
+  ];
+
+  const images = imageNames.map(name => `${basePath}${name}`);
+
   return (
     <Box p={4}>
       <Heading mb={4}>Welcome to Saagar's Portfolio</Heading>
@@ -25,26 +38,10 @@ const Home = () => {
       </Flex>
 
       <Box bg="gray.200" p={4} borderRadius="md" boxShadow="md" textAlign="center" mb={6}>
-        <Heading size="md" mb={4}>Skills</Heading>
-        <SimpleGrid columns={{ base: 3, md: 5 }} spacing={8} justifyItems="center">
-          <Text fontSize="lg">Machine Learning</Text>
-          <Text fontSize="lg">{'Printed Circuit Board (PCB) Design'}</Text>
-          <Text fontSize="lg">Web Development</Text>
-          <Text fontSize="lg">Python</Text>
-          <Text fontSize="lg">{'Extract, Transform, Load (ETL)'}</Text>
-          <Text fontSize="lg">Java</Text>
-          <Text fontSize="lg">Circuit Design</Text>
-          <Text fontSize="lg">React.js</Text>
-          <Text fontSize="lg">Autodesk Fusion 360</Text>
-          <Text fontSize="lg">Electrical Troubleshooting</Text>
-          <Text fontSize="lg">CAD/CAM</Text>
-          <Text fontSize="lg">&nbsp;</Text>
-          <Text fontSize="lg">Solidworks</Text>
-          <Text fontSize="lg">&nbsp;</Text>
-          <Text fontSize="lg">Spring Framework</Text>
-        </SimpleGrid>
+        <Gallery images={images} />
       </Box>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mb={4}>
+
+      <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4} mb={4}>
         <Card overflow='hidden' variant='outline' maxW='lg'>
           <CardBody>
             <Image
@@ -149,28 +146,24 @@ const Home = () => {
             </CardFooter>
           </CardBody>
         </Card>
-      </SimpleGrid>
-
-      <Box mt={4}>
-        <Card
-          direction={{ base: 'column', sm: 'row' }}
-          overflow='hidden'
-          variant='outline'
-        >
-          <Image
-            objectFit='cover'
-            width="20%" // Extend the image along the card
-            src='/assets/DroneIcon.jpg'
-            alt='Drone Icon'
-          />
-          <Stack>
-            <CardBody>
-              <Heading size='md'>High School</Heading>
+        <Card overflow='hidden' variant='outline' maxW='lg'>
+          <CardBody>
+            <Image
+              objectFit='cover'
+              maxW={{ base: '100%', sm: '200px' }}
+              src='/assets/DroneIcon.jpg'
+              alt='Drone Icon'
+              mx="auto"
+              borderRadius={'md'}
+              mt={2}
+            />
+            <Stack>
+              <Heading size='md' pt={2}>High School</Heading>
               <Text py='2' fontSize="md">
                 &nbsp;
               </Text>
-              <Divider my={2} />
-            </CardBody>
+              <Divider mt={2} />
+            </Stack>
             <CardFooter>
               <Button
                 as={RouterLink}
@@ -182,10 +175,32 @@ const Home = () => {
                 Read More
               </Button>
             </CardFooter>
-          </Stack>
+          </CardBody>
         </Card>
+      </SimpleGrid>
+      <Box bg="gray.200" p={4} borderRadius="md" boxShadow="md" textAlign="center" mb={6}>
+        <Heading size="md" mb={4}>Skills & Tools</Heading>
+        <SimpleGrid columns={{ base: 3, md: 5 }} spacing={8} justifyItems="center">
+          <Text fontSize="lg">Machine Learning</Text>
+          <Text fontSize="lg">{'Extract, Transform, Load (ETL)'}</Text>
+          <Text fontSize="lg">Python</Text>
+          <Text fontSize="lg">Java</Text>
+          <Text fontSize="lg">React.js</Text>
+          <Text fontSize="lg">Spring Framework</Text>
+          <Text fontSize="lg">Web Development</Text>
+          <Text fontSize="lg">Circuit Design</Text>
+          <Text fontSize="lg">{'Printed Circuit Board (PCB) Design'}</Text>
+          <Text fontSize="lg">Electrical Troubleshooting</Text>
+          <Text fontSize="lg">Altium</Text>
+          <Text fontSize="lg">Autodesk Eagle</Text>
+          <Text fontSize="lg">CAD/CAM</Text>
+          <Text fontSize="lg">Autodesk Fusion 360</Text>
+          <Text fontSize="lg">Solidworks</Text>
+          <Text fontSize="lg">3D Printing</Text>
+          <Text fontSize="lg">CNC</Text>
+          <Text fontSize="lg">Laser Cutting</Text>
+        </SimpleGrid>
       </Box>
-
     </Box>
   );
 };
