@@ -2,6 +2,7 @@ import { Box, Tabs, TabList, TabPanels, Tab, TabPanel} from '@chakra-ui/react';
 import HighschoolSubpage1 from './HighschoolSubpage1';
 import HighschoolSubpage2 from './HighschoolSubpage2';
 import HighschoolSubpage3 from './HighschoolSubpage3';
+import HighschoolSubpage4 from './HighschoolSubpage4';
 
 function Highschool() {
   return (
@@ -17,6 +18,9 @@ function Highschool() {
           <Tab _selected={{ bg: '#2B92BF', color: 'white' }} bg="teal.400" color="white" margin={1.5}>
             Flute Finger Rest Etsy & Patent
           </Tab>
+          <Tab _selected={{ bg: '#2B92BF', color: 'white' }} bg="teal.400" color="white" margin={1.5}>
+            Hexapod
+          </Tab>
         </TabList>
 
         <TabPanels>
@@ -28,6 +32,9 @@ function Highschool() {
           </TabPanel>
           <TabPanel>
             <HighschoolSubpage3 />
+          </TabPanel>
+          <TabPanel>
+            <HighschoolSubpage4 />
           </TabPanel>
         </TabPanels>
       </Tabs>
