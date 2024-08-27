@@ -186,6 +186,7 @@ const Home = () => {
         </Card>
         <Card overflow='hidden' variant='outline' maxW='lg'>
           <CardBody>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} justifyItems="center">
             <Image
               objectFit='cover'
               maxW={{ base: '100%', sm: '200px' }}
@@ -195,6 +196,16 @@ const Home = () => {
               borderRadius={'md'}
               mt={2}
             />
+            <Image
+              objectFit='cover'
+              maxW={{ base: '100%', sm: '200px' }}
+              src='/Gallery/Rest Alone.jpg'
+              alt='Drone Icon'
+              mx="auto"
+              borderRadius={'md'}
+              mt={2}
+            />
+          </SimpleGrid>
             <Stack>
               <Heading size='md' pt={2}>High School</Heading>
               <Text py='2' fontSize="md" noOfLines={[10]}>
