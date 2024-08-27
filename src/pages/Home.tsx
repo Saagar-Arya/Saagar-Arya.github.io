@@ -69,8 +69,7 @@ const Home = () => {
         </Box>
         <Box flex="1" display="flex" justifyContent="center" alignItems="center" bg="white" p={4} borderRadius="md" boxShadow="md">
           <Text fontSize="lg" textAlign="center">
-            Objective: Always learning across multiple disciplines to apply
-            knowledge and problem-solving skills for better solutions.
+          Welcome to my portfolio! I'm Saagar Arya, a passionate Electrical and Computer Engineering & Computer Science student at Duke University. I thrive on interdisciplinary learning, applying my software development, robotics, and engineering skills to create innovative solutions.
           </Text>
         </Box>
       </Flex>
