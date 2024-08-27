@@ -27,10 +27,9 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
             <Image
               src={image}
               alt={`Gallery image ${index + 1}`}
-              maxH="400px"
-              maxW="100%"
+              boxSize="400px"
               mx="auto"
-              objectFit="contain"
+              objectFit="cover"
             />
           </Box>
         ))}

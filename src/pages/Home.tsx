@@ -9,20 +9,21 @@ const Home = () => {
 
   const imageNames = [
     'Lidar Output.png',
-    'PCBDraft3.jpg',
-    'capsule_plate.png',
     'ColorExample.jpg',
+    'DroneSchematic.png',
     'Drone PCB.png',
     'DroneIcon.jpg',
+    'SkullClamp.png',
+    'SystemDraft1.jpg',
+    'PCBDraft3.jpg',
     'blender.png',
-    'DroneSchematic.png',
+    'capsule_plate.png',
     'effortless.png',
     'EffortlessHex.jpg',
     'EffortlessMini.jpg',
     'EffortlessMiniRender.jpg',
     'Rover_Icon.jpg',
     'EffortlessWheelguard.jpg',
-    'Electronc Harness V1.jpg',
     'final_plate.png',
     'FluteFull.jpg',
     'Full Robot.jpg',
@@ -41,8 +42,6 @@ const Home = () => {
     'robot_render.png',
     'RoverPath.png',
     'SingleREst.jpg',
-    'SkullClamp.png',
-    'SystemDraft1.jpg',
     'thelawnmower.png',
     'TighetningPin.jpg',
     'Titanium Top Plate.jpg',
@@ -86,7 +85,7 @@ const Home = () => {
             <Image
               objectFit='cover'
               maxW={{ base: '100%', sm: '200px' }}
-              src='/assets/Physical_PCB_Draft2.jpg'
+              src='/Gallery/SkullClamp.png'
               alt='Head Clamp'
               mx="auto"
               borderRadius={'md'}
@@ -94,7 +93,7 @@ const Home = () => {
             />
             <Stack>
               <Heading size='md' pt={2}>Head Clamp</Heading>
-              <Text py='2' fontSize="md">
+              <Text py='2' fontSize="md" noOfLines={[10]}>
                 The head clamp is a tool used in neurosurgery to immobilize the patient's head during procedures. However, it currently lacks a digital method to monitor the pressure applied by the clamp. Our project enhances the clamp by integrating sensors into the pins, along with circuitry to capture and process the electrical signals corresponding to strain. These signals are then accurately converted into pressure readings, which are displayed to the neurosurgeon. This system provides real-time pressure monitoring during the clamp's setup and throughout the surgery, alerting the surgeon to any changes in pressure. *Patent Pending*
               </Text>
               <Divider mt={2} />
@@ -136,7 +135,7 @@ const Home = () => {
             </SimpleGrid>
             <Stack>
               <Heading size='md' pt={2}>MaRRS Research</Heading>
-              <Text py='2' fontSize="md">
+              <Text py='2' fontSize="md" noOfLines={[10]}>
                 &nbsp;
               </Text>
               <Divider mt={2} />
@@ -159,7 +158,7 @@ const Home = () => {
             <Image
               objectFit='cover'
               maxW={{ base: '100%', sm: '200px' }}
-              src='/assets/RoboSubIcon.jpg'
+              src='/Gallery/robot_render.png'
               alt='Duke Robotics Club'
               mx="auto"
               borderRadius={'md'}
@@ -167,7 +166,7 @@ const Home = () => {
             />
             <Stack>
               <Heading size='md' pt={2}>Duke Robotics Club</Heading>
-              <Text py='2' fontSize="md">
+              <Text py='2' fontSize="md" noOfLines={[10]}>
                 &nbsp;
               </Text>
               <Divider mt={2} />
@@ -198,7 +197,7 @@ const Home = () => {
             />
             <Stack>
               <Heading size='md' pt={2}>High School</Heading>
-              <Text py='2' fontSize="md">
+              <Text py='2' fontSize="md" noOfLines={[10]}>
                 &nbsp;
               </Text>
               <Divider mt={2} />
