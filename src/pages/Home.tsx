@@ -69,8 +69,7 @@ const Home = () => {
         </Box>
         <Box flex="1" display="flex" justifyContent="center" alignItems="center" bg="white" p={4} borderRadius="md" boxShadow="md">
           <Text fontSize="lg" textAlign="center">
-          Welcome to my portfolio! I'm Saagar Arya, a passionate Electrical and Computer Engineering & Computer Science student at Duke University. I thrive on interdisciplinary learning, applying my software development, robotics, and engineering skills to create innovative solutions.
-          </Text>
+            Welcome to my portfolio! I'm Saagar Arya, a student at Duke University, double majoring in Computer Science and Electrical and Computer Engineering. I thrive on interdisciplinary learning, where I apply theoretical concepts to physical creations and use my skills in robotics and engineering to develop innovative solutions.          </Text>
         </Box>
       </Flex>
 
@@ -92,7 +91,7 @@ const Home = () => {
             />
             <Stack>
               <Heading size='md' pt={2}>Head Clamp</Heading>
-              <Text py='2' fontSize="md" noOfLines={[10]}>
+              <Text py='2' fontSize="md" noOfLines={[15]}>
                 The head clamp is a tool used in neurosurgery to immobilize the patient's head during procedures. However, it currently lacks a digital method to monitor the pressure applied by the clamp. Our project enhances the clamp by integrating sensors into the pins, along with circuitry to capture and process the electrical signals corresponding to strain. These signals are then accurately converted into pressure readings, which are displayed to the neurosurgeon. This system provides real-time pressure monitoring during the clamp's setup and throughout the surgery, alerting the surgeon to any changes in pressure. *Patent Pending*
               </Text>
               <Divider mt={2} />
@@ -135,7 +134,7 @@ const Home = () => {
             <Stack>
               <Heading size='md' pt={2}>MaRRS Research</Heading>
               <Text py='2' fontSize="md" noOfLines={[10]}>
-                &nbsp;
+                The Marine Robotics and Remote Sensing Lab uses drone imagery to monitor seal populations and their habitats. I trained segmentation models to detect seals and analyze their habitat preferences about environmental variables like ice density (90% accuracy). Another project involved mounting an autonomous rover with a Lidar sensor to create accurate 3D replicas (digital twins) of surveyed areas.
               </Text>
               <Divider mt={2} />
             </Stack>
@@ -166,8 +165,7 @@ const Home = () => {
             <Stack>
               <Heading size='md' pt={2}>Duke Robotics Club</Heading>
               <Text py='2' fontSize="md" noOfLines={[10]}>
-                &nbsp;
-              </Text>
+                As part of the Duke Underwater Robotics Club, I contributed to the development of an autonomous underwater robot designed to maneuver and complete various tasks. My role involved fabricating a titanium top plate to secure key components, modualar sensor mounts, and a spring loaded torpedo system. My work contributed to our 8th place finish at Robosub 2024.              </Text>
               <Divider mt={2} />
             </Stack>
             <CardFooter>
@@ -185,30 +183,30 @@ const Home = () => {
         </Card>
         <Card overflow='hidden' variant='outline' maxW='lg'>
           <CardBody>
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} justifyItems="center">
-            <Image
-              objectFit='cover'
-              maxW={{ base: '100%', sm: '200px' }}
-              src='/assets/DroneIcon.jpg'
-              alt='Drone Icon'
-              mx="auto"
-              borderRadius={'md'}
-              mt={2}
-            />
-            <Image
-              objectFit='cover'
-              maxW={{ base: '100%', sm: '200px' }}
-              src='/Gallery/Rest Alone.jpg'
-              alt='Drone Icon'
-              mx="auto"
-              borderRadius={'md'}
-              mt={2}
-            />
-          </SimpleGrid>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} justifyItems="center">
+              <Image
+                objectFit='cover'
+                maxW={{ base: '100%', sm: '200px' }}
+                src='/assets/DroneIcon.jpg'
+                alt='Drone Icon'
+                mx="auto"
+                borderRadius={'md'}
+                mt={2}
+              />
+              <Image
+                objectFit='cover'
+                maxW={{ base: '100%', sm: '200px' }}
+                src='/Gallery/Rest Alone.jpg'
+                alt='Drone Icon'
+                mx="auto"
+                borderRadius={'md'}
+                mt={2}
+              />
+            </SimpleGrid>
             <Stack>
               <Heading size='md' pt={2}>High School</Heading>
               <Text py='2' fontSize="md" noOfLines={[10]}>
-                &nbsp;
+                During high school, I found various engineering projects, including designing and fabricating combat robots for Antweight and Beetleweight divisions. I developed a hexapod with interconnected limbs and programmed it using Arduino, and collaborated on creating a custom drone PCB and Arduino-based firmware. Additionally, I founded an Etsy store featuring a 3D-printed flute rest, for which I was granted a utility patent.
               </Text>
               <Divider mt={2} />
             </Stack>
