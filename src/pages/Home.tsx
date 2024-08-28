@@ -46,7 +46,7 @@ const Home = () => {
       </Box>
 
       <SimpleGrid columns={{ base: 2, md: 3 }} spacing={4} mb={4}>
-        <Card overflow='hidden' variant='outline' maxW='lg'>
+        <Card overflow='hidden' variant='outline' maxW='lg' boxShadow="md">
           <CardBody>
             <Image
               objectFit='cover'
@@ -77,7 +77,7 @@ const Home = () => {
             </CardFooter>
           </CardBody>
         </Card>
-        <Card overflow='hidden' variant='outline' maxW='lg'>
+        <Card overflow='hidden' variant='outline' maxW='lg' boxShadow="md" >
           <CardBody>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} justifyItems="center">
               <Image
@@ -119,7 +119,7 @@ const Home = () => {
             </CardFooter>
           </CardBody>
         </Card>
-        <Card overflow='hidden' variant='outline' maxW='lg'>
+        <Card overflow='hidden' variant='outline' maxW='lg' boxShadow="md">
           <CardBody>
             <Image
               objectFit='cover'
@@ -149,7 +149,7 @@ const Home = () => {
             </CardFooter>
           </CardBody>
         </Card>
-        <Card overflow='hidden' variant='outline' maxW='lg'>
+        <Card overflow='hidden' variant='outline' maxW='lg' boxShadow="md">
           <CardBody>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} justifyItems="center">
               <Image
