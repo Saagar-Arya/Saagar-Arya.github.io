@@ -123,7 +123,7 @@ const Home = () => {
             <Image
               objectFit='cover'
               maxW={{ base: '100%', sm: '200px' }}
-              src='/Gallery/robot_render.png'
+              src='/Gallery/blender.png'
               alt='Duke Robotics Club'
               mx="auto"
               borderRadius={'md'}
