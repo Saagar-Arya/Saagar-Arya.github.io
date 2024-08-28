@@ -1,7 +1,8 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Heading, Text, Image, Flex,  } from '@chakra-ui/react';
 import Gallery from './Gallery';
 
 function HeadClamp() {
+    const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
     const basePath = '/Gallery/';
 
     const imageNames = [
@@ -31,7 +32,7 @@ function HeadClamp() {
                 boxShadow="md"
                 bg="white"
                 overflow="auto"
-                mb={6} // Add margin-bottom to create space below the text box
+                mb={6}
             >
                 <Heading size='md' pt={2}>Head Clamp</Heading>
                 <Text py='2' fontSize="md">
@@ -41,6 +42,42 @@ function HeadClamp() {
             <Box bg="gray.200" p={4} borderRadius="md" boxShadow="md" textAlign="center">
                 <Gallery images={images} />
             </Box>
+            <Flex
+        mt={6}
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+      >
+        <Box
+          border="1px"
+          borderColor="gray.200"
+          borderRadius="md"
+          overflow="hidden"
+          width={imageWidth}  // Use responsive width
+          mb={4}
+        >
+          <Image
+            src="/EGR101 Poster Presentation - Skull Crushers.pptx_Page_1.jpg"
+            alt="EGR101 Poster Presentation"
+            width="100%"
+            height="auto"
+          />
+        </Box>
+        <Box
+          border="1px"
+          borderColor="gray.200"
+          borderRadius="md"
+          overflow="hidden"
+          width={imageWidth}  // Use responsive width
+        >
+          <Image
+            src="/EGR102 Poster Presentation - Skull Crushers.jpg"
+            alt="EGR102 Poster Presentation"
+            width="100%"
+            height="auto"
+          />
+        </Box>
+      </Flex>
         </div>
     );
 }
