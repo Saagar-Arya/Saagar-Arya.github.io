@@ -214,6 +214,28 @@ const Home = () => {
           <Text fontSize="lg">Laser Cutting</Text>
         </SimpleGrid>
       </Box>
+      <Flex 
+          mt={6} 
+          justifyContent="center" 
+          height="90vh"  // This ensures the flex container takes up most of the viewport height
+        >
+          <Box 
+            border="1px" 
+            borderColor="gray.200" 
+            borderRadius="md" 
+            overflow="hidden" 
+            height="80vh"
+            width="80vw"
+          >
+            <iframe 
+              src="/Saagar Arya Resume 08_24_2024.pdf" 
+              width="100%" 
+              height="100%" 
+              style={{ border: "none" }}
+              title="Saagar Resume"
+            />
+          </Box>
+        </Flex>
     </Box>
   );
 };
