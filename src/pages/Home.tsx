@@ -12,7 +12,7 @@ const Home = () => {
     'PCBDraft3.jpg',
     'SealPic2.JPG',
     'Lidar Output.png',
-    'robot_render.png',
+    'blender.png',
     'DroneIcon.jpg',
     'FluteFull.jpg',
     'effortless.png',
@@ -123,7 +123,7 @@ const Home = () => {
             <Image
               objectFit='cover'
               maxW={{ base: '100%', sm: '200px' }}
-              src='/Gallery/blender.png'
+              src='/Gallery/robot_render.png'
               alt='Duke Robotics Club'
               mx="auto"
               borderRadius={'md'}
