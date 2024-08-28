@@ -1,27 +1,43 @@
-import { Button, Box, Flex } from '@chakra-ui/react';
+import { Button, Box, Flex, Image } from '@chakra-ui/react';
 
 function HighschoolSubpage3() {
+  const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
+
   return (
     <div>
       <Flex 
         mt={6} 
         justifyContent="center" 
-        height="90vh"
+        alignItems="center" 
+        flexDirection="column"
       >
         <Box 
           border="1px" 
           borderColor="gray.200" 
           borderRadius="md" 
           overflow="hidden" 
-          height="80vh"
-          width="80vw"
+          width={imageWidth}  // Use responsive width
+          mb={4}
         >
-          <iframe 
-            src="/assets/Saagar Flute Rests.pdf" 
-            width="100%" 
-            height="100%" 
-            style={{ border: "none" }}
-            title="Saagar Flute Rests PDF"
+          <Image 
+            src="/assets/PDFPIctures/Saagar Flute Rests_Page_1.jpg" // Update to your image path
+            alt="Saagar Flute Rests Page 1"
+            width="100%"
+            height="auto"
+          />
+        </Box>
+        <Box 
+          border="1px" 
+          borderColor="gray.200" 
+          borderRadius="md" 
+          overflow="hidden" 
+          width={imageWidth}  // Use responsive width
+        >
+          <Image 
+            src="/assets/PDFPIctures/Saagar Flute Rests_Page_2.jpg" // Update to your image path
+            alt="Saagar Flute Rests Page 2"
+            width="100%"
+            height="auto"
           />
         </Box>
       </Flex>
@@ -32,12 +48,11 @@ function HighschoolSubpage3() {
         colorScheme="teal" 
         variant={'outline'}
         mt={4}
-        >
+      >
         Download Flute Rests One Pager
       </Button>
     </div>
   );  
 }
-  
-  export default HighschoolSubpage3;
-  
+
+export default HighschoolSubpage3;

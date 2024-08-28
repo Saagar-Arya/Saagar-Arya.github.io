@@ -1,27 +1,43 @@
-import { Button, Box, Flex } from '@chakra-ui/react';
+import { Button, Box, Flex, Image } from '@chakra-ui/react';
 
 function HighschoolSubpage1() {
+  const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
+
   return (
     <div>
       <Flex 
         mt={6} 
         justifyContent="center" 
-        height="90vh"  // This ensures the flex container takes up most of the viewport height
+        alignItems="center" 
+        flexDirection="column"
       >
         <Box 
           border="1px" 
           borderColor="gray.200" 
           borderRadius="md" 
           overflow="hidden" 
-          height="80vh"
-          width="80vw"
+          width={imageWidth}  // Use responsive width
+          mb={4}
         >
-          <iframe 
-            src="/assets/Saagar Drone Project.pdf" 
-            width="100%" 
-            height="100%" 
-            style={{ border: "none" }}
-            title="Saagar Drone Project PDF"
+          <Image 
+            src="/assets/PDFPIctures/Saagar Drone Project_Page_1.jpg" 
+            alt="Saagar Drone Project Page 1"
+            width="100%"
+            height="auto"
+          />
+        </Box>
+        <Box 
+          border="1px" 
+          borderColor="gray.200" 
+          borderRadius="md" 
+          overflow="hidden" 
+          width={imageWidth}  // Use responsive width
+        >
+          <Image 
+            src="/assets/PDFPIctures/Saagar Drone Project_Page_2.jpg" 
+            alt="Saagar Drone Project Page 2"
+            width="100%"
+            height="auto"
           />
         </Box>
       </Flex>

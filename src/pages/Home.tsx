@@ -19,6 +19,7 @@ const Home = () => {
   ];
 
   const images = imageNames.map(name => `${basePath}${name}`);
+  const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
 
   return (
     <Box p={4}>
@@ -215,27 +216,27 @@ const Home = () => {
         </SimpleGrid>
       </Box>
       <Flex 
-          mt={6} 
-          justifyContent="center" 
-          height="90vh"  // This ensures the flex container takes up most of the viewport height
-        >
-          <Box 
-            border="1px" 
-            borderColor="gray.200" 
-            borderRadius="md" 
-            overflow="hidden" 
-            height="80vh"
-            width="80vw"
-          >
-            <iframe 
-              src="/Saagar Arya Resume 08_24_2024.pdf" 
-              width="100%" 
-              height="100%" 
-              style={{ border: "none" }}
-              title="Saagar Resume"
-            />
-          </Box>
-        </Flex>
+        mt={6} 
+        justifyContent="center" 
+        alignItems="center" 
+        flexDirection="column"
+      >
+      <Box
+        border="1px"
+        borderColor="gray.200"
+        borderRadius="md"
+        overflow="hidden"
+        width={imageWidth}  // Use responsive width
+        mb={4}
+      >
+        <Image
+          src="\Saagar Arya Resume 08_24_2024.jpg"
+          alt="Saagar Drone Project Page 1"
+          width="100%"
+          height="auto"
+        />
+      </Box>
+      </Flex>
     </Box>
   );
 };
