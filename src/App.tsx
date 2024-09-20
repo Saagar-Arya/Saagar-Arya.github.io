@@ -13,7 +13,7 @@ const ResumeDownloadIcon = () => (
   <Tooltip label="Download Resume" aria-label="Download Resume Tooltip">
     <IconButton
       as="a"
-      href="/Saagar Arya Resume 09_01_2024.pdf"
+      href="/Saagar_Arya_Resume_09_20_2024.pdf"
       download // This attribute triggers the download
       aria-label="Download Resume"
       icon={<FaFileDownload />}

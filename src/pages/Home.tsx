@@ -230,7 +230,7 @@ const Home = () => {
         mb={4}
       >
         <Image
-          src="\Saagar Arya Resume 09_01_2024.jpg"
+          src="\Saagar_Arya_Resume_09_20_2024.png"
           alt="Saagar Drone Project Page 1"
           width="100%"
           height="auto"
