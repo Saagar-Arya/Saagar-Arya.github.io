@@ -11,7 +11,7 @@ const Home = () => {
     'head_clamp.jpg',
     'Lidar Output.png',
     'PCBDraft3.jpg',
-    'SealPic2.JPG',
+    'Ice_trace_Seals_trace.JPG',
     'MiniRender.png',
     'Oogway CAD.PNG',
     'DroneIcon.jpg',

@@ -6,10 +6,11 @@ function MaRRSResearch() {
 
   const imageNames = [
     'Lidar Output.png',
-    'SealPic2.JPG',
+    'Ice_trace_Seals_trace.JPG',
     'Rover_Icon.jpg',
     'RoverPath.png',
     'SealPic1.JPG',
+    'SealPic2.JPG',
     'ColorExample.jpg',
     'InverseExample.jpg',
   ];
