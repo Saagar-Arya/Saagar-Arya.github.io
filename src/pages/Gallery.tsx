@@ -23,17 +23,21 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
     <Box position="relative" maxW="75%" mx="auto" p={4}>
       <Slider {...settings} ref={sliderRef}>
         {images.map((image, index) => (
-          <Box key={index} p={2}>
+          <Flex key={index} justify="center" align="center" p={4} height="500px">
             <Image
               src={image}
               alt={`Gallery image ${index + 1}`}
-              boxSize="400px"
+              maxH="100%"
+              maxW="100%"
+              objectFit="contain"
+              borderRadius="md"
+              boxShadow="md"
               mx="auto"
-              objectFit="cover"
             />
-          </Box>
+          </Flex>
         ))}
       </Slider>
+
       <Flex position="absolute" top="50%" left="-50px" transform="translateY(-50%)">
         <IconButton
           aria-label="Previous Image"
@@ -44,6 +48,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
           colorScheme="blue"
         />
       </Flex>
+
       <Flex position="absolute" top="50%" right="-50px" transform="translateY(-50%)">
         <IconButton
           aria-label="Next Image"

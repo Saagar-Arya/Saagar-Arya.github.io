@@ -5,11 +5,14 @@ function DukeRobotics() {
   const basePath = '/Gallery/';
 
   const imageNames = [
-    'robot_render.png',
     'Full Robot.jpg',
+    'MiniRender.png',
+    'Torpedos-1.jpg',
+    'image (7).png',
+    'image (5).png',
+    'image (4).png',
+    'Oogway CAD.PNG',
     'blender.png',
-    'Torpedos.jpg',
-    'trigger2.png',
     'final_plate.png',
     'capsule_plate.png',
     'Titanium Top Plate.jpg',

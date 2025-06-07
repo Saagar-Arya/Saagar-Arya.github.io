@@ -6,14 +6,11 @@ function HeadClamp() {
     const basePath = '/Gallery/';
 
     const imageNames = [
-        'SkullClamp.png',
+        'head_clamp.jpg',
+        'pin_test.jpg',
+        'New_UI.png',
         'PinDraft2.jpg',
         'PCBDraft3.jpg',
-        'Pin_Render_Poster_Quick2.png',
-        'SystemDraft1.jpg',
-        'PCBDraft2Skeleton.jpg',
-        'PCBDraft2Strapped.jpg',
-        'Electronc Harness V1.jpg',
         'TighetningPin.jpg',
     ];
     const images = imageNames.map(name => `${basePath}${name}`);

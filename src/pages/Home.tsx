@@ -8,11 +8,12 @@ const Home = () => {
   const basePath = '/Gallery/';
 
   const imageNames = [
-    'SkullClamp.png',
+    'head_clamp.jpg',
+    'Lidar Output.png',
     'PCBDraft3.jpg',
     'SealPic2.JPG',
-    'Lidar Output.png',
-    'blender.png',
+    'MiniRender.png',
+    'Oogway CAD.PNG',
     'DroneIcon.jpg',
     'FluteFull.jpg',
     'effortless.png',
@@ -199,6 +200,7 @@ const Home = () => {
           <Text fontSize="lg">{'Extract, Transform, Load (ETL)'}</Text>
           <Text fontSize="lg">Python</Text>
           <Text fontSize="lg">Java</Text>
+          <Text fontSize="lg">C/C++</Text>
           <Text fontSize="lg">React.js</Text>
           <Text fontSize="lg">Spring Framework</Text>
           <Text fontSize="lg">Web Development</Text>
@@ -230,7 +232,7 @@ const Home = () => {
         mb={4}
       >
         <Image
-          src="\Saagar_Arya_Resume_09_20_2024.png"
+          src="\Saagar_Arya_Resume_2025_06_07.png"
           alt="Saagar Drone Project Page 1"
           width="100%"
           height="auto"

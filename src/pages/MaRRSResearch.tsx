@@ -6,12 +6,12 @@ function MaRRSResearch() {
 
   const imageNames = [
     'Lidar Output.png',
+    'SealPic2.JPG',
     'Rover_Icon.jpg',
     'RoverPath.png',
+    'SealPic1.JPG',
     'ColorExample.jpg',
     'InverseExample.jpg',
-    'SealPic2.JPG',
-    'SealPic1.JPG',
   ];
   const images = imageNames.map(name => `${basePath}${name}`);
 
