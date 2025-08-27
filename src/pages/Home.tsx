@@ -61,8 +61,7 @@ const Home = () => {
             <Stack>
               <Heading size='md' pt={2}>Head Clamp</Heading>
               <Text py='2' fontSize="md" noOfLines={[15]}>
-                The head clamp is a tool used in neurosurgery to immobilize the patient's head during procedures. However, it currently lacks a digital method to monitor the pressure applied by the clamp. Our project enhances the clamp by integrating sensors into the pins, along with circuitry to capture and process the electrical signals corresponding to strain. These signals are then accurately converted into pressure readings, which are displayed to the neurosurgeon. This system provides real-time pressure monitoring during the clamp's setup and throughout the surgery, alerting the surgeon to any changes in pressure. *Patent Pending*
-              </Text>
+                The head clamp is a tool used in neurosurgery to immobilize the patient’s head during procedures. Traditionally, it provides stable fixation but offers no digital means of monitoring the pressure applied. Our updated design preserves the original pins by relocating the sensing mechanism off the clamp itself. Instead, a retrofitted force washer is integrated into the clamp assembly. This washer measures the applied forces and transmits data through a custom interface. The system provides surgeons with real-time feedback during setup and continuous pressure monitoring throughout the procedure. *Patent Pending*</Text>
               <Divider mt={2} />
             </Stack>
             <CardFooter>
@@ -103,7 +102,7 @@ const Home = () => {
             <Stack>
               <Heading size='md' pt={2}>MaRRS Research</Heading>
               <Text py='2' fontSize="md" noOfLines={[10]}>
-                The Marine Robotics and Remote Sensing Lab uses drone imagery to monitor seal populations and their habitats. I trained segmentation models to detect seals and analyze their habitat preferences about environmental variables like ice density (90% accuracy). Another project involved mounting an autonomous rover with a Lidar sensor to create accurate 3D replicas (digital twins) of surveyed areas.
+                The Marine Robotics and Remote Sensing Lab uses drone imagery to monitor seal populations and their habitats. I trained segmentation models to detect seals and analyze their habitat preferences about environmental variables like ice density (90% accuracy & ~3 papers in review). Another project involved mounting an autonomous rover with a Lidar sensor to create accurate 3D replicas (digital twins) of surveyed areas.
               </Text>
               <Divider mt={2} />
             </Stack>
@@ -122,20 +121,31 @@ const Home = () => {
         </Card>
         <Card overflow='hidden' variant='outline' maxW='lg' boxShadow="md">
           <CardBody>
-            <Image
-              objectFit='cover'
-              maxW={{ base: '100%', sm: '200px' }}
-              src='/Gallery/robot_render.png'
-              alt='Duke Robotics Club'
-              mx="auto"
-              borderRadius={'md'}
-              mt={2}
-            />
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} justifyItems="center">
+              <Image
+                objectFit='cover'
+                maxW={{ base: '100%', sm: '200px' }}
+                src='/assets/robot_render.png'
+                alt='Oogway Icon'
+                mx="auto"
+                borderRadius={'md'}
+                mt={2}
+              />
+              <Image
+                objectFit='cover'
+                maxW={{ base: '100%', sm: '200px' }}
+                src='/assets/MiniRender.png'
+                alt='Crush Icon'
+                mx="auto"
+                borderRadius={'md'}
+                mt={2}
+              />
+            </SimpleGrid>
             <Stack>
               <Heading size='md' pt={2}>Duke Robotics Club</Heading>
               <Text py='2' fontSize="md" noOfLines={[10]}>
-                As part of the Duke Underwater Robotics Club, I contributed to the development of an autonomous underwater robot designed to maneuver and complete various tasks. My role involved fabricating a titanium top plate to secure key components, modualar sensor mounts, and a spring loaded torpedo system. My work contributed to our 8th place finish at Robosub 2024.              </Text>
-              <Divider mt={2} />
+                I am President of the Duke Robotics Club, where I lead the design and construction of autonomous underwater robots for the International RoboSub competition. I fabricated a titanium top plate to secure our capsule, helped develop a spring-loaded torpedo system, and led the effort to build a new robot from the ground up. I am currently focusing on a more robust hydrophone system to track acoustic pingers and improve our autonomous underwater navigation.              <Divider mt={2} />
+              </Text>
             </Stack>
             <CardFooter>
               <Button
