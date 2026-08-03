@@ -1,5 +1,6 @@
-import { Box, Heading, Text, Image, Flex,  } from '@chakra-ui/react';
+import { Box, Heading, Text, Image, Flex } from '@chakra-ui/react';
 import Gallery from './Gallery';
+import { ContentPanel, GalleryPanel } from '../components/PagePanels';
 
 function HeadClamp() {
     const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
@@ -17,7 +18,7 @@ function HeadClamp() {
 
     return (
         <div>
-            <Box
+            <ContentPanel
                 maxW="80vw"
                 maxH="80vh"
                 width="80vw"
@@ -31,14 +32,16 @@ function HeadClamp() {
                 overflow="auto"
                 mb={6}
             >
-                <Heading size='md' pt={2}>Head Clamp</Heading>
-                <Text py='2' fontSize="md">
+                <Heading size="md" pt={2}>
+                  Head Clamp
+                </Heading>
+                <Text py="2" fontSize="md">
                     The head clamp is a tool used in neurosurgery to immobilize the patient's head during procedures. However, it currently lacks a digital method to monitor the pressure applied by the clamp. Our project enhances the clamp by integrating sensors into the pins, along with circuitry to capture and process the electrical signals corresponding to strain. These signals are then accurately converted into pressure readings, which are displayed to the neurosurgeon. This system provides real-time pressure monitoring during the clamp's setup and throughout the surgery, alerting the surgeon to any changes in pressure. *Patent Pending*
                 </Text>
-            </Box>
-            <Box bg="gray.200" p={4} borderRadius="md" boxShadow="md" textAlign="center">
+              </ContentPanel>
+              <GalleryPanel>
                 <Gallery images={images} />
-            </Box>
+              </GalleryPanel>
             <Flex
         mt={6}
         justifyContent="center"

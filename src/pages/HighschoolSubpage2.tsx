@@ -1,5 +1,6 @@
 import { Button, Box, Flex, Image } from '@chakra-ui/react';
 import Gallery from './Gallery';
+import { GalleryPanel } from '../components/PagePanels';
 
 function HighschoolSubpage2() {
   const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
@@ -18,9 +19,9 @@ function HighschoolSubpage2() {
   const images = imageNames.map(name => `${basePath}${name}`);
   return (
     <div>
-      <Box bg="gray.200" p={4} borderRadius="md" boxShadow="md" textAlign="center">
+      <GalleryPanel>
         <Gallery images={images} />
-      </Box>
+      </GalleryPanel>
       <Flex 
         mt={6} 
         justifyContent="center" 

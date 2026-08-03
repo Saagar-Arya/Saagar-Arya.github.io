@@ -1,5 +1,6 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 import Gallery from './Gallery';
+import { ContentPanel, GalleryPanel } from '../components/PagePanels';
 
 function MaRRSResearch() {
   const basePath = '/Gallery/';
@@ -18,7 +19,7 @@ function MaRRSResearch() {
 
   return (
     <div>
-      <Box
+      <ContentPanel
         maxW="80vw"
         maxH="80vh"
         width="80vw"
@@ -32,14 +33,16 @@ function MaRRSResearch() {
         overflow="auto"
         mb={6}
       >
-        <Heading size='md' pt={2}>MaRRS Research</Heading>
-        <Text py='2' fontSize="md" >
+        <Heading size="md" pt={2}>
+          MaRRS Research
+        </Heading>
+        <Text py="2" fontSize="md">
           The Marine Robotics and Remote Sensing Lab uses drone imagery to monitor seal populations and their habitats. I trained segmentation models to detect seals and analyze their habitat preferences about environmental variables like ice density (90% accuracy). Another project involved mounting an autonomous rover with a Lidar sensor to create accurate 3D replicas (digital twins) of surveyed areas.
         </Text>
-      </Box>
-      <Box bg="gray.200" p={4} borderRadius="md" boxShadow="md" textAlign="center">
+      </ContentPanel>
+      <GalleryPanel>
         <Gallery images={images} />
-      </Box>
+      </GalleryPanel>
     </div>
 
   );

@@ -1,5 +1,6 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Heading, Text } from '@chakra-ui/react';
 import Gallery from './Gallery';
+import { ContentPanel, GalleryPanel } from '../components/PagePanels';
 
 function DukeRobotics() {
   const basePath = '/Gallery/';
@@ -21,7 +22,7 @@ function DukeRobotics() {
 
   return (
     <div>
-      <Box
+      <ContentPanel
         maxW="80vw"
         maxH="80vh"
         width="80vw"
@@ -35,14 +36,16 @@ function DukeRobotics() {
         overflow="auto"
         mb={6}
       >
-        <Heading size='md' pt={2}>Duke Robotics Club</Heading>
-        <Text py='2' fontSize="md" >
+        <Heading size="md" pt={2}>
+          Duke Robotics Club
+        </Heading>
+        <Text py="2" fontSize="md">
           As part of the Duke Underwater Robotics Club, I contributed to the development of an autonomous underwater robot designed to maneuver and complete various tasks. My role involved fabricating a titanium top plate to secure key components, modualar sensor mounts, and a spring loaded torpedo system. My work contributed to our 8th place finish at Robosub 2024.
         </Text>
-      </Box>
-      <Box bg="gray.200" p={4} borderRadius="md" boxShadow="md" textAlign="center">
+      </ContentPanel>
+      <GalleryPanel>
         <Gallery images={images} />
-      </Box>
+      </GalleryPanel>
     </div>
 
   );
