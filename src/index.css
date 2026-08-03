@@ -29,10 +29,12 @@ body {
   min-height: 100vh;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/*
+ * Deliberately no global `a { color: inherit }` rule here. This file is
+ * unlayered, so it outranks Chakra's layered styles — a blanket anchor colour
+ * would override the white text on Buttons/IconButtons rendered `asChild` as
+ * anchors, leaving dark text on a solid teal background.
+ */
 
 * {
   box-sizing: border-box;

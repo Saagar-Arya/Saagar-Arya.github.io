@@ -1,85 +1,21 @@
-import { Box, Heading, Text, Image, Flex } from '@chakra-ui/react';
-import Gallery from './Gallery';
-import { ContentPanel, GalleryPanel } from '../components/PagePanels';
+import ProjectPage from '../components/ProjectPage';
+import { galleryImages } from '../data/gallery';
 
-function HeadClamp() {
-    const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
-    const basePath = '/Gallery/';
+const images = galleryImages([
+  'head-clamp-instrumented-rig.jpg',
+  'sensor-pin-load-test.jpg',
+  'head-clamp-pressure-dashboard.png',
+  'strain-gauge-pin-prototype.jpg',
+  'head-clamp-esp32-pcb.jpg',
+  'sensing-pin-closeup.jpg',
+]);
 
-    const imageNames = [
-        'head_clamp.jpg',
-        'pin_test.jpg',
-        'New_UI.png',
-        'PinDraft2.jpg',
-        'PCBDraft3.jpg',
-        'TighetningPin.jpg',
-    ];
-    const images = imageNames.map(name => `${basePath}${name}`);
-
-    return (
-        <div>
-            <ContentPanel
-                maxW="80vw"
-                maxH="80vh"
-                width="80vw"
-                height="auto"
-                p={4}
-                border="1px"
-                borderColor="gray.200"
-                borderRadius="md"
-                boxShadow="md"
-                bg="white"
-                overflow="auto"
-                mb={6}
-            >
-                <Heading size="md" pt={2}>
-                  Head Clamp
-                </Heading>
-                <Text py="2" fontSize="md">
-                    The head clamp is a tool used in neurosurgery to immobilize the patient's head during procedures. However, it currently lacks a digital method to monitor the pressure applied by the clamp. Our project enhances the clamp by integrating sensors into the pins, along with circuitry to capture and process the electrical signals corresponding to strain. These signals are then accurately converted into pressure readings, which are displayed to the neurosurgeon. This system provides real-time pressure monitoring during the clamp's setup and throughout the surgery, alerting the surgeon to any changes in pressure. *Patent Pending*
-                </Text>
-              </ContentPanel>
-              <GalleryPanel>
-                <Gallery images={images} />
-              </GalleryPanel>
-            <Flex
-        mt={6}
-        justifyContent="center"
-        alignItems="center"
-        flexDirection="column"
-      >
-        <Box
-          border="1px"
-          borderColor="gray.200"
-          borderRadius="md"
-          overflow="hidden"
-          width={imageWidth}  // Use responsive width
-          mb={4}
-        >
-          <Image
-            src="/EGR101 Poster Presentation - Skull Crushers.pptx_Page_1.jpg"
-            alt="EGR101 Poster Presentation"
-            width="100%"
-            height="auto"
-          />
-        </Box>
-        <Box
-          border="1px"
-          borderColor="gray.200"
-          borderRadius="md"
-          overflow="hidden"
-          width={imageWidth}  // Use responsive width
-        >
-          <Image
-            src="/EGR102 Poster Presentation - Skull Crushers.jpg"
-            alt="EGR102 Poster Presentation"
-            width="100%"
-            height="auto"
-          />
-        </Box>
-      </Flex>
-        </div>
-    );
-}
+const HeadClamp = () => (
+  <ProjectPage
+    title="Head Clamp"
+    description="The head clamp is a tool used in neurosurgery to immobilize the patient’s head during procedures. Traditionally, it provides stable fixation but offers no digital means of monitoring the pressure applied. Our updated design preserves the original pins by relocating the sensing mechanism off the clamp itself. Instead, a retrofitted force washer is integrated into the clamp assembly. This washer measures the applied forces and transmits data through a custom interface. The system provides surgeons with real-time feedback during setup and continuous pressure monitoring throughout the procedure. Patent pending."
+    images={images}
+  />
+);
 
 export default HeadClamp;

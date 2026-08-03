@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# Saagar Arya — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site, live at **https://saagar-arya.github.io/**.
 
-Currently, two official plugins are available:
+Built with React 19, TypeScript, Chakra UI v3, and Vite 8. Deployed to GitHub Pages
+automatically on every push to `main` via `.github/workflows/deploy.yml`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
+npm run dev        # dev server at http://localhost:5173
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+| Script            | What it does                                  |
+| ----------------- | --------------------------------------------- |
+| `npm run dev`     | Vite dev server with hot reload               |
+| `npm run build`   | Typecheck (`tsc -b`) then build to `dist/`    |
+| `npm run preview` | Serve the production build locally            |
+| `npm run lint`    | ESLint over the whole project                 |
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Layout
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+src/
+  App.tsx               nav bar + routes
+  main.tsx              entry: HashRouter + ChakraProvider
+  theme.ts              Chakra system (fonts, global CSS)
+  index.css             page background gradient, base typography
+  components/
+    Gallery.tsx         carousel used by every page
+    ProjectPage.tsx     shared shell for the project detail pages
+    PagePanels.tsx      the frosted panel wrappers
+    ui/                 Chakra v3 composed primitives (tooltip, toaster)
+  data/
+    site.ts             email, LinkedIn, resume path, nav links
+    gallery.ts          builds gallery entries from filenames
+  pages/                one file per route
+```
+
+Routing uses `HashRouter`, so URLs look like `/#/duke-robotics`. That is deliberate —
+GitHub Pages has no server-side rewrite, so a hash route is what survives a direct
+visit or refresh on a deep link.
+
+## Adding images
+
+Drop the file in `public/Gallery/` and add its filename to the relevant page:
+
+```ts
+const images = galleryImages(['my-new-photo.jpg']);
+```
+
+`galleryImages` prefixes `/Gallery/` and derives the alt text from the filename, so
+**name files descriptively** — `titanium-top-plate-installed.jpg`, not `IMG_4821.jpg`.
+The alt text is what screen readers announce.
+
+Every gallery slide is rendered into a fixed-ratio stage with `object-fit: contain`,
+so images of any aspect ratio can be mixed without the carousel changing height.
+
+## Content that goes stale
+
+- `public/Saagar_Arya_Resume_2025_06_07.pdf` — linked from the nav; the filename is
+  the version. Update `RESUME_PDF` in `src/data/site.ts` when you replace it.
+- Project copy lives inline in `src/pages/*.tsx` and in `projectCards` in `Home.tsx`.
+  The Home card and the detail page each carry their own description — keep them in sync.
