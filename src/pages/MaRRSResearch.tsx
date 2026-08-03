@@ -1,22 +1,24 @@
 import ProjectPage from '../components/ProjectPage';
 import { galleryImages } from '../data/gallery';
+import { marrsPublications } from '../data/publications';
 
 const images = galleryImages([
-  'lidar-point-cloud-campus.png',
   'ice-floe-segmentation-overlay.jpg',
-  'lidar-survey-rover.jpg',
-  'rover-survey-path.png',
-  'seals-on-ice-aerial.jpg',
   'seal-detections-aerial.jpg',
+  'seals-on-ice-aerial.jpg',
   'seals-on-ice-crop-color.jpg',
   'seals-on-ice-crop-inverted.jpg',
+  'lidar-point-cloud-campus.png',
+  'lidar-survey-rover.jpg',
+  'rover-survey-path.png',
 ]);
 
 const MaRRSResearch = () => (
   <ProjectPage
     title="MaRRS Research"
-    description="The Marine Robotics and Remote Sensing Lab uses drone imagery to monitor seal populations and their habitats. I trained segmentation models to detect seals and analyze their habitat preferences about environmental variables like ice density (90% accuracy). Another project involved mounting an autonomous rover with a Lidar sensor to create accurate 3D replicas (digital twins) of surveyed areas."
+    description="At Duke's Marine Robotics and Remote Sensing Lab I work on automated wildlife monitoring from drone imagery. I applied YOLOv8 models to detect seals in aerial surveys of Glacier Bay National Park, using human-in-the-loop active learning with confidence thresholding to improve both dataset quality and detection performance. I also implemented a LiDAR system on an autonomous rover to generate digital twins of terrain, including forest that aerial surveys cannot see into. I am a co-author on two published papers with a third in progress."
     images={images}
+    publications={marrsPublications}
   />
 );
 

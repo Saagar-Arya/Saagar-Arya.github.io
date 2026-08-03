@@ -16,8 +16,8 @@ const NotFound = () => (
       </Text>
       <Heading size="3xl">Page not found</Heading>
       <Text fontSize="lg" color="blackAlpha.700" maxW="lg">
-        That page doesn’t exist — it may have been renamed or removed. Everything else is still one
-        click away.
+        That page doesn't exist. It may have been renamed or removed, but everything else is still
+        one click away.
       </Text>
       <Button asChild colorPalette="teal" size="lg" mt={2}>
         <RouterLink to="/">Back to home</RouterLink>

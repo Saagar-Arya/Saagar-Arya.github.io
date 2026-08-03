@@ -1,4 +1,4 @@
-# Saagar Arya — Portfolio
+# Saagar Arya Portfolio
 
 Personal portfolio site, live at **https://saagar-arya.github.io/**.
 
@@ -38,7 +38,7 @@ src/
   pages/                one file per route
 ```
 
-Routing uses `HashRouter`, so URLs look like `/#/duke-robotics`. That is deliberate —
+Routing uses `HashRouter`, so URLs look like `/#/duke-robotics`. That is deliberate:
 GitHub Pages has no server-side rewrite, so a hash route is what survives a direct
 visit or refresh on a deep link.
 
@@ -51,7 +51,7 @@ const images = galleryImages(['my-new-photo.jpg']);
 ```
 
 `galleryImages` prefixes `/Gallery/` and derives the alt text from the filename, so
-**name files descriptively** — `titanium-top-plate-installed.jpg`, not `IMG_4821.jpg`.
+**name files descriptively**: `titanium-top-plate-installed.jpg`, not `IMG_4821.jpg`.
 The alt text is what screen readers announce.
 
 Every gallery slide is rendered into a fixed-ratio stage with `object-fit: contain`,
@@ -59,7 +59,7 @@ so images of any aspect ratio can be mixed without the carousel changing height.
 
 ## Content that goes stale
 
-- `public/Saagar_Arya_Resume_2025_06_07.pdf` — linked from the nav; the filename is
+- `public/Saagar_Arya_HWSW_Resume_2026_08_02.pdf`: linked from the nav; the filename is
   the version. Update `RESUME_PDF` in `src/data/site.ts` when you replace it.
 - Project copy lives inline in `src/pages/*.tsx` and in `projectCards` in `Home.tsx`.
-  The Home card and the detail page each carry their own description — keep them in sync.
+  The Home card and the detail page each carry their own description, so keep them in sync.

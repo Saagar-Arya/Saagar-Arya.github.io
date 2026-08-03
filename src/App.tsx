@@ -27,9 +27,9 @@ function App() {
       await navigator.clipboard.writeText(EMAIL);
       toaster.create({ title: 'Email copied to clipboard!', type: 'success', duration: 2000, closable: true });
     } catch {
-      // Clipboard access can be blocked (insecure context, denied permission) —
-      // surface the address so it can still be copied by hand.
-      toaster.create({ title: `Copy failed — ${EMAIL}`, type: 'error', duration: 6000, closable: true });
+      // Clipboard access can be blocked (insecure context, denied permission),
+      // so surface the address to let it still be copied by hand.
+      toaster.create({ title: `Copy failed. Email: ${EMAIL}`, type: 'error', duration: 6000, closable: true });
     }
   };
 

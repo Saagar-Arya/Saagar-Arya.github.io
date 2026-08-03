@@ -10,11 +10,22 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  Wrap,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
+import { FaArrowDown } from 'react-icons/fa';
 import Gallery from '../components/Gallery';
 import { galleryImages } from '../data/gallery';
 import { ContentPanel, GalleryPanel } from '../components/PagePanels';
+
+const PROJECTS_ID = 'projects';
+const EXPERIENCE_ID = 'experience';
+
+// A plain #hash href would be swallowed by HashRouter and treated as a route
+// change, so scroll imperatively instead.
+const scrollToId = (id: string) => () => {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 
 type ProjectCardData = {
   title: string;
@@ -23,66 +34,102 @@ type ProjectCardData = {
   images: Array<{ src: string; alt: string }>;
 };
 
+type Role = {
+  org: string;
+  title: string;
+  period: string;
+  detail: string;
+};
+
+const experience: Role[] = [
+  {
+    org: 'AeroVironment',
+    title: 'Software Engineering Intern, Loitering & Munition Systems',
+    period: 'Jun 2026 - Present',
+    detail:
+      'Autonomy and task planning software in ROS2 for Switchblade aircraft, plus a tracker fusing vision with onboard sensor data.',
+  },
+  {
+    org: 'SpaceX',
+    title: 'Software Engineering Intern, Starship Communications',
+    period: 'Jan - Apr 2026',
+    detail:
+      'Migrated Starship ground software into a Kubernetes cluster, owning the infrastructure end to end. Built regression tests for the ECEF Sender that replaced a costly hardware-in-the-loop dependency.',
+  },
+  {
+    org: 'Northrop Grumman',
+    title: 'Software Engineering Intern, GATR Program',
+    period: 'May - Aug 2025',
+    detail:
+      'Automatic target recognition turning underwater vehicle sensor data into layered maps of the ocean floor. C++, Python, Protobuf RPC, and a GTest suite for CI.',
+  },
+  {
+    org: 'Tarigma Corporation',
+    title: 'Software Engineering Intern',
+    period: 'Jun 2022 - Sep 2024',
+    detail:
+      'Full-stack work on G.E.M., a power grid monitoring application. Built a fault locator for correcting line geometry errors in real grid data.',
+  },
+];
+
 const projectCards: ProjectCardData[] = [
   {
     title: 'Duke Robotics Club',
     description:
-      'I am President of the Duke Robotics Club, where I lead the design and construction of autonomous underwater robots for the International RoboSub competition. I fabricated a titanium top plate to secure our capsule, helped develop a spring-loaded torpedo system, and led the effort to build a new robot from the ground up. I am currently focusing on a more robust hydrophone system to track acoustic pingers and improve our autonomous underwater navigation.',
+      "As President I lead a 40-member team building autonomous underwater vehicles for RoboSub. I led the design and build of our second AUV, Crush, and built a four-channel hydrophone array on a custom PCB for acoustic localization. We placed 7th of 56 teams at RoboSub 2025, the club's first finals appearance.",
     to: '/duke-robotics',
     images: [
-      { src: '/Gallery/oogway-auv-render.png', alt: 'Robot render' },
-      { src: '/Gallery/mini-auv-cad-render.png', alt: 'Mini render' },
+      { src: '/Gallery/crush-auv-2026.jpg', alt: 'Crush AUV, 2026 build' },
+      { src: '/Gallery/oogway-auv-2026.jpg', alt: 'Oogway AUV, 2026 build' },
     ],
   },
   {
     title: 'Head Clamp',
     description:
-      'The head clamp is a tool used in neurosurgery to immobilize the patient’s head during procedures. Traditionally, it provides stable fixation but offers no digital means of monitoring the pressure applied. Our updated design preserves the original pins by relocating the sensing mechanism off the clamp itself. Instead, a retrofitted force washer is integrated into the clamp assembly. This washer measures the applied forces and transmits data through a custom interface. The system provides surgeons with real-time feedback during setup and continuous pressure monitoring throughout the procedure. Patent pending.',
+      "Co-founder of Blue Skull Group LLC, building a digital pressure monitor for the skull clamps that hold a patient rigid during brain surgery. A load cell retrofit maps deformation to calibrated force, and custom PCBs stream live per-pin readings over Bluetooth. Utility patent pending.",
     to: '/head-clamp',
-    images: [{ src: '/Gallery/head-clamp-skull-demo.png', alt: 'Head clamp' }],
+    images: [{ src: '/Gallery/head-clamp-v3-live-readout.jpg', alt: 'Head clamp with live force readout' }],
   },
   {
     title: 'MaRRS Research',
     description:
-      'The Marine Robotics and Remote Sensing Lab uses drone imagery to monitor seal populations and their habitats. I trained segmentation models to detect seals and analyze their habitat preferences about environmental variables like ice density (90% accuracy & ~3 papers in review). Another project involved mounting an autonomous rover with a Lidar sensor to create accurate 3D replicas (digital twins) of surveyed areas.',
+      "At Duke's Marine Robotics and Remote Sensing Lab I use YOLOv8 to detect seals in drone imagery of Glacier Bay National Park, with human-in-the-loop active learning to improve the dataset. I also put LiDAR on an autonomous rover to build digital twins of terrain. Co-author on two published papers.",
     to: '/marrs-research',
     images: [
-      { src: '/Gallery/seals-on-ice-crop-color.jpg', alt: 'Seal icon' },
-      { src: '/Gallery/lidar-survey-rover.jpg', alt: 'Rover icon' },
+      { src: '/Gallery/ice-floe-segmentation-overlay.jpg', alt: 'Ice floe segmentation with seal detections' },
+      { src: '/Gallery/lidar-survey-rover.jpg', alt: 'LiDAR survey rover' },
     ],
   },
   {
     title: 'High School',
     description:
-      'During high school, I found various engineering projects, including designing and fabricating combat robots for Antweight and Beetleweight divisions. I developed a hexapod with interconnected limbs and programmed it using Arduino, and collaborated on creating a custom drone PCB and Arduino-based firmware. Additionally, I founded an Etsy store featuring a 3D-printed flute rest, for which I was granted a utility patent.',
+      "Where the hardware started. I built combat robots for the Antweight and Beetleweight divisions, a hexapod walker on Arduino, and a custom drone PCB with its firmware. I also founded an Etsy business selling a 3D-printed flute rest, which holds a granted U.S. utility patent.",
     to: '/highschool',
     images: [
-      { src: '/Gallery/micro-quadcopter-built.jpg', alt: 'Drone icon' },
-      { src: '/Gallery/flute-finger-rest-product.jpg', alt: 'Flute rest' },
+      { src: '/Gallery/micro-quadcopter-built.jpg', alt: 'Custom-built micro quadcopter' },
+      { src: '/Gallery/flute-finger-rest-product.jpg', alt: '3D-printed flute finger rest' },
     ],
   },
 ];
 
-const skills = [
-  'Machine Learning',
-  'ETL',
-  'Python',
-  'Java',
-  'C/C++',
-  'React.js',
-  'Spring Framework',
-  'Web Development',
-  'Circuit Design',
-  'PCB Design',
-  'Electrical Troubleshooting',
-  'Altium',
-  'Autodesk Eagle',
-  'CAD/CAM',
-  'Fusion 360',
-  'Solidworks',
-  '3D Printing',
-  'CNC',
-  'Laser Cutting',
+// Grouped to match the four categories on the resume.
+const skillGroups: Array<{ label: string; items: string[] }> = [
+  {
+    label: 'Languages & Frameworks',
+    items: ['C++', 'Python', 'C', 'Java', 'SQL', 'React', 'Bash'],
+  },
+  {
+    label: 'Infrastructure & Tools',
+    items: ['ROS2', 'Kubernetes', 'Bazel/Starlark', 'Docker', 'Helm', 'GTest', 'Protobuf'],
+  },
+  {
+    label: 'Machine Learning',
+    items: ['Ultralytics YOLO', 'OpenCV', 'PyTorch', 'TensorRT', 'scikit-learn', 'Roboflow', 'LabelMe'],
+  },
+  {
+    label: 'Hardware & EDA',
+    items: ['KiCad', 'Eagle', 'Autodesk Fusion 360', 'SolidWorks'],
+  },
 ];
 
 const ProjectCard = ({ title, description, to, images }: ProjectCardData) => (
@@ -114,17 +161,6 @@ const ProjectCard = ({ title, description, to, images }: ProjectCardData) => (
       </SimpleGrid>
 
       <Stack gap={3} flex="1">
-        <Badge
-          alignSelf="flex-start"
-          colorPalette="teal"
-          variant="subtle"
-          borderRadius="full"
-          px={3}
-          py={1}
-          textTransform="none"
-        >
-          Featured project
-        </Badge>
         <Heading size="lg" lineHeight="1.15">
           {title}
         </Heading>
@@ -142,14 +178,14 @@ const ProjectCard = ({ title, description, to, images }: ProjectCardData) => (
 );
 
 const highlightImages = galleryImages([
-  'head-clamp-instrumented-rig.jpg',
-  'lidar-point-cloud-campus.png',
-  'head-clamp-esp32-pcb.jpg',
+  'crush-auv-2026.jpg',
+  'oogway-auv-in-pool.jpg',
+  'head-clamp-v3-live-readout.jpg',
+  'hydrophone-array-pcb-layout.png',
   'ice-floe-segmentation-overlay.jpg',
-  'mini-auv-cad-render.png',
-  'oogway-auv-cad-assembly.png',
+  'oogway-auv-2026.jpg',
+  'lidar-point-cloud-campus.png',
   'micro-quadcopter-built.jpg',
-  'flute-with-finger-rest.jpg',
   'effortless-beetleweight-cad-render.png',
 ]);
 
@@ -165,20 +201,29 @@ const Home = () => (
             fontWeight="700"
             color="teal.700"
           >
-            Robotics • Research • Engineering
+            Robotics, Autonomy, Embedded Systems
           </Text>
           <Heading size="4xl" lineHeight="1.02">
             Saagar Arya
           </Heading>
           <Text fontSize="lg" color="blackAlpha.800">
-            Duke student focused on robotics, fabrication, and applied engineering. This portfolio
-            collects work from lab research, club leadership, and early projects that still shape how
-            I design and build.
+            I build robots and the software that runs them. I'm studying Electrical &
+            Computer Engineering and Computer Science at Duke, graduating December 2026, and
+            I'm President of the Robotics Club, where our 40-person team placed 7th of 56 at
+            RoboSub 2025. I've worked as a software and embedded engineer at AeroVironment,
+            SpaceX, and Northrop Grumman.
           </Text>
-          <Text fontSize="md" color="blackAlpha.700">
-            The site is organized with the most recent and substantial work first, followed by
-            earlier projects that provide context.
-          </Text>
+
+          <Wrap gap={3}>
+            <Button colorPalette="teal" onClick={scrollToId(PROJECTS_ID)}>
+              More about projects
+              <FaArrowDown />
+            </Button>
+            <Button variant="outline" colorPalette="teal" onClick={scrollToId(EXPERIENCE_ID)}>
+              More about my experience
+              <FaArrowDown />
+            </Button>
+          </Wrap>
         </Stack>
       </ContentPanel>
 
@@ -202,13 +247,12 @@ const Home = () => (
       <Gallery images={highlightImages} />
     </GalleryPanel>
 
-    <Box mb={4}>
+    <Box id={PROJECTS_ID} mb={4} scrollMarginTop={{ base: 4, md: 6 }}>
       <Heading size="2xl" mb={2}>
         Selected Projects
       </Heading>
       <Text color="blackAlpha.700">
-        The projects are ordered from the work I want to surface first, to the earlier pieces that
-        round out the portfolio.
+        Ordered from the work I want to surface first to the earlier projects that led into it.
       </Text>
     </Box>
 
@@ -218,25 +262,77 @@ const Home = () => (
       ))}
     </SimpleGrid>
 
-    <ContentPanel p={{ base: 5, md: 6 }}>
-      <Heading size="2xl" mb={4} textAlign="center">
+    <ContentPanel
+      id={EXPERIENCE_ID}
+      p={{ base: 5, md: 7 }}
+      mb={8}
+      // Leaves breathing room above the heading when scrolled to from the hero.
+      scrollMarginTop={{ base: 4, md: 6 }}
+    >
+      <Heading size="2xl" mb={5}>
+        Experience
+      </Heading>
+      <Stack gap={5} separator={<Separator borderColor="blackAlpha.200" />}>
+        {experience.map(role => (
+          <Box key={role.org}>
+            <SimpleGrid columns={{ base: 1, md: 2 }} gap={1} mb={1} alignItems="baseline">
+              <Heading size="md">{role.org}</Heading>
+              <Text
+                fontSize="sm"
+                color="blackAlpha.600"
+                textAlign={{ base: 'left', md: 'right' }}
+                whiteSpace="nowrap"
+              >
+                {role.period}
+              </Text>
+            </SimpleGrid>
+            <Text fontSize="sm" fontWeight="600" color="teal.700" mb={1}>
+              {role.title}
+            </Text>
+            <Text fontSize="md" color="blackAlpha.800">
+              {role.detail}
+            </Text>
+          </Box>
+        ))}
+      </Stack>
+    </ContentPanel>
+
+    <ContentPanel p={{ base: 5, md: 7 }}>
+      <Heading size="2xl" mb={5}>
         Skills & Tools
       </Heading>
-      <SimpleGrid columns={{ base: 2, md: 3, lg: 4 }} gap={3}>
-        {skills.map(skill => (
-          <Badge
-            key={skill}
-            p={2}
-            borderRadius="full"
-            justifyContent="center"
-            textAlign="center"
-            colorPalette="teal"
-            variant="subtle"
-          >
-            {skill}
-          </Badge>
+      <Stack gap={5}>
+        {skillGroups.map(group => (
+          <Box key={group.label}>
+            <Text
+              textTransform="uppercase"
+              letterSpacing="0.14em"
+              fontSize="xs"
+              fontWeight="700"
+              color="teal.700"
+              mb={2}
+            >
+              {group.label}
+            </Text>
+            <Wrap gap={2}>
+              {group.items.map(skill => (
+                <Badge
+                  key={skill}
+                  px={3}
+                  py={1.5}
+                  borderRadius="full"
+                  colorPalette="teal"
+                  variant="subtle"
+                  textTransform="none"
+                  fontSize="sm"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </Wrap>
+          </Box>
         ))}
-      </SimpleGrid>
+      </Stack>
     </ContentPanel>
   </Box>
 );

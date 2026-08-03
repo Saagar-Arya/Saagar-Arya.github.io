@@ -1,6 +1,6 @@
 export const EMAIL = 'saagar.arya12@gmail.com';
-export const LINKEDIN_URL = 'https://www.linkedin.com/in/saagar-arya-261341216/';
-export const RESUME_PDF = '/Saagar_Arya_Resume_2025_06_07.pdf';
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/saagar-arya312/';
+export const RESUME_PDF = '/Saagar_Arya_HWSW_Resume_2026_08_02.pdf';
 
 export const sectionLinks = [
   { to: '/duke-robotics', label: 'Duke Robotics Club' },

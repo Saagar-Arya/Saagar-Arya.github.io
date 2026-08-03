@@ -4,9 +4,9 @@ const sans = 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont
 
 /**
  * Chakra v3 reset `teal` to a Tailwind-style scale (600 = #0d9488), which reads
- * distinctly green. This restores the v2 scale — a muted blue-green — so buttons
+ * distinctly green. This restores the v2 scale, a muted blue-green, so buttons
  * and badges keep the site's original colourway. The built-in semantic tokens
- * (`solid`, `fg`, `subtle`, …) all reference `{colors.teal.N}`, so overriding the
+ * (`solid`, `fg`, `subtle`, etc.) all reference `{colors.teal.N}`, so overriding the
  * numeric scale is enough to carry the change everywhere.
  */
 const tealV2 = {

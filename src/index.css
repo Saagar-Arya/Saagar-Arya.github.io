@@ -31,7 +31,7 @@ body {
 
 /*
  * Deliberately no global `a { color: inherit }` rule here. This file is
- * unlayered, so it outranks Chakra's layered styles — a blanket anchor colour
+ * unlayered, so it outranks Chakra's layered styles. A blanket anchor colour
  * would override the white text on Buttons/IconButtons rendered `asChild` as
  * anchors, leaving dark text on a solid teal background.
  */

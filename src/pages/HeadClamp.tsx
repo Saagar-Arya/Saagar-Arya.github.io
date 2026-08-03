@@ -1,20 +1,25 @@
 import ProjectPage from '../components/ProjectPage';
 import { galleryImages } from '../data/gallery';
+import { headClampPublications } from '../data/publications';
 
 const images = galleryImages([
+  'head-clamp-v3-live-readout.jpg',
   'head-clamp-instrumented-rig.jpg',
-  'sensor-pin-load-test.jpg',
   'head-clamp-pressure-dashboard.png',
-  'strain-gauge-pin-prototype.jpg',
   'head-clamp-esp32-pcb.jpg',
+  'sensor-pin-load-test.jpg',
+  'strain-gauge-pin-prototype.jpg',
   'sensing-pin-closeup.jpg',
+  'head-clamp-skull-demo.png',
 ]);
 
 const HeadClamp = () => (
   <ProjectPage
     title="Head Clamp"
-    description="The head clamp is a tool used in neurosurgery to immobilize the patient’s head during procedures. Traditionally, it provides stable fixation but offers no digital means of monitoring the pressure applied. Our updated design preserves the original pins by relocating the sensing mechanism off the clamp itself. Instead, a retrofitted force washer is integrated into the clamp assembly. This washer measures the applied forces and transmits data through a custom interface. The system provides surgeons with real-time feedback during setup and continuous pressure monitoring throughout the procedure. Patent pending."
+    description="A skull clamp holds a patient's head rigid during brain surgery but gives the surgeon no digital reading of the force applied. Through Blue Skull Group LLC, the startup I co-founded, we built one. Rather than modifying the pins, we fabricated a load cell retrofit that fits existing clamps and maps deformation to calibrated force. Custom PCBs stream per-pin and overall readings over Bluetooth, giving live feedback during setup and continuous monitoring through the procedure. We are in discussions with medical device companies and pursuing FDA testing. Utility patent application filed 10/2025."
     images={images}
+    publications={headClampPublications}
+    downloads={[{ label: 'Scientific poster (PDF)', href: '/assets/head-clamp-dmd-poster.pdf' }]}
   />
 );
 

@@ -1,6 +1,9 @@
 import { Box, Button, Heading, Image, Stack, Tabs, Text } from '@chakra-ui/react';
 import Gallery from '../components/Gallery';
+import Publications from '../components/Publications';
 import { galleryImages, type GalleryImage } from '../data/gallery';
+import { flutePublications } from '../data/publications';
+import type { Publication } from '../data/publications';
 import { ContentPanel, GalleryPanel } from '../components/PagePanels';
 
 type HighschoolTab = {
@@ -11,6 +14,8 @@ type HighschoolTab = {
   pages: string[];
   pdf: string;
   downloadLabel: string;
+  /** Papers or patents that came out of this project. */
+  publications?: Publication[];
 };
 
 const tabs: HighschoolTab[] = [
@@ -55,6 +60,7 @@ const tabs: HighschoolTab[] = [
     ],
     pdf: '/assets/Saagar Flute Rests.pdf',
     downloadLabel: 'Download Flute Rests One Pager',
+    publications: flutePublications,
   },
   {
     value: 'hexapod',
@@ -69,8 +75,14 @@ const tabs: HighschoolTab[] = [
   },
 ];
 
-const TabBody = ({ images, pages, pdf, downloadLabel }: HighschoolTab) => (
+const TabBody = ({ images, pages, pdf, downloadLabel, publications = [] }: HighschoolTab) => (
   <Stack gap={6} align="center">
+    {publications.length > 0 && (
+      <ContentPanel w="full" p={{ base: 5, md: 6 }}>
+        <Publications items={publications} heading="Patent" />
+      </ContentPanel>
+    )}
+
     <GalleryPanel w="full">
       <Gallery images={images} />
     </GalleryPanel>
