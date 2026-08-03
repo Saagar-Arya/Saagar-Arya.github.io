@@ -57,60 +57,63 @@ function App() {
   };
 
   return (
-    <Box minH="100vh" py={{ base: 3, md: 5 }}>
+    <Box minH="100vh" py={{ base: 2, md: 3 }}>
       <Container maxW="7xl">
         <Flex
           as="nav"
-          position="sticky"
-          top={3}
-          zIndex={10}
+          w="full"
           align="center"
-          gap="4"
+          justify="center"
+          gap={{ base: 2, md: 3 }}
           wrap="wrap"
-          px={{ base: 3, md: 4 }}
-          py="3"
+          px={{ base: 2, md: 3 }}
+          py="2"
           borderRadius="2xl"
           border="1px solid"
           borderColor="whiteAlpha.500"
           bg="rgba(9, 78, 92, 0.9)"
           color="white"
-          boxShadow="0 16px 40px rgba(12, 74, 110, 0.22)"
-          backdropFilter="blur(12px)"
+          boxShadow="0 10px 24px rgba(12, 74, 110, 0.16)"
+          mb={6}
         >
-          <Tooltip label="Home" aria-label="Home Tooltip">
-            <IconButton
-              as={RouterLink}
-              to="/"
-              aria-label="Home"
-              icon={<FaHome />}
-              {...navActionButtonStyles}
-            />
-          </Tooltip>
-          <Flex flex="1" display={{ base: 'none', lg: 'block' }} />
-          {sectionLinks.map(link => (
-            <Link
-              key={link.to}
-              as={RouterLink}
-              to={link.to}
-              fontWeight="600"
-              px="3"
-              py="2"
-              borderRadius="md"
-              _hover={{ bg: 'rgba(255, 255, 255, 0.12)' }}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Flex flex="1" display={{ base: 'none', lg: 'block' }} />
-
-          {navActions.map(action => (
-            <Tooltip key={action.key} label={action.tooltip} aria-label={`${action.label} Tooltip`}>
-              {action.key === 'email' ? action.render(handleCopyEmail) : action.render()}
+          <Flex align="center" gap="2" wrap="wrap" justify="center">
+            <Tooltip label="Home" aria-label="Home Tooltip">
+              <IconButton
+                as={RouterLink}
+                to="/"
+                aria-label="Home"
+                icon={<FaHome />}
+                size="sm"
+                {...navActionButtonStyles}
+              />
             </Tooltip>
-          ))}
+            {sectionLinks.map(link => (
+              <Link
+                key={link.to}
+                as={RouterLink}
+                to={link.to}
+                fontWeight="600"
+                fontSize="sm"
+                px="1.5"
+                py="1"
+                borderRadius="md"
+                _hover={{ bg: 'rgba(255, 255, 255, 0.12)' }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </Flex>
+
+          <Flex align="center" gap="2" wrap="wrap" justify="center">
+            {navActions.map(action => (
+              <Tooltip key={action.key} label={action.tooltip} aria-label={`${action.label} Tooltip`}>
+                {action.key === 'email' ? action.render(handleCopyEmail) : action.render()}
+              </Tooltip>
+            ))}
+          </Flex>
         </Flex>
 
-        <Box py={{ base: 4, md: 6 }}>
+        <Box py={{ base: 2, md: 3 }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/highschool/*" element={<Highschool />} />

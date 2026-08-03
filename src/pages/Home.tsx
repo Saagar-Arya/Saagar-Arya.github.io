@@ -121,7 +121,7 @@ const Home = () => {
   const imageWidth = { base: "90vw", md: "70vw", lg: "50vw" }; // Adjust widths for different screen sizes
 
   return (
-    <Box p={4}>
+    <Box>
       <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={6} mb={8} alignItems="stretch">
         <ContentPanel p={{ base: 5, md: 8 }}>
           <Stack spacing={4} h="full" justify="center">
@@ -132,10 +132,10 @@ const Home = () => {
               Saagar Arya
             </Heading>
             <Text fontSize="lg" color="blackAlpha.800">
-              Duke student building in robotics, fabrication, and applied engineering. This portfolio collects the work across lab research, club leadership, and early projects that still shape how I design and build.
+              Duke student focused on robotics, fabrication, and applied engineering. This portfolio collects work from lab research, club leadership, and early projects that still shape how I design and build.
             </Text>
             <Text fontSize="md" color="blackAlpha.700">
-              The site is organized by the most recent and substantial work first, then by the earlier projects that explain the background behind it.
+              The site is organized with the most recent and substantial work first, followed by earlier projects that provide context.
             </Text>
           </Stack>
         </ContentPanel>
