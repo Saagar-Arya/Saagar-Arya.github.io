@@ -114,7 +114,7 @@ const skillGroups: Array<{ label: string; items: string[] }> = [
   },
   {
     label: 'Machine Learning',
-    items: ['Ultralytics YOLO', 'OpenCV', 'PyTorch', 'TensorRT', 'scikit-learn', 'Roboflow', 'LabelMe'],
+    items: ['TensorRT', 'Ultralytics YOLO', 'OpenCV', 'PyTorch', 'scikit-learn', 'Roboflow', 'LabelMe'],
   },
   {
     label: 'Hardware & EDA',
