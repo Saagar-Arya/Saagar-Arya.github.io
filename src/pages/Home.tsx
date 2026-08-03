@@ -13,19 +13,9 @@ import {
   Wrap,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import { FaArrowDown } from 'react-icons/fa';
 import Gallery from '../components/Gallery';
 import { galleryImages } from '../data/gallery';
 import { ContentPanel, GalleryPanel } from '../components/PagePanels';
-
-const PROJECTS_ID = 'projects';
-const EXPERIENCE_ID = 'experience';
-
-// A plain #hash href would be swallowed by HashRouter and treated as a route
-// change, so scroll imperatively instead.
-const scrollToId = (id: string) => () => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-};
 
 type ProjectCardData = {
   title: string;
@@ -58,7 +48,7 @@ const experience: Role[] = [
   },
   {
     org: 'Northrop Grumman',
-    title: 'Software Engineering Intern, GATR Program',
+    title: 'Embedded Software Engineer Intern, GATR Program',
     period: 'May - Aug 2025',
     detail:
       'Automatic target recognition turning underwater vehicle sensor data into layered maps of the ocean floor. C++, Python, Protobuf RPC, and a GTest suite for CI.',
@@ -213,17 +203,6 @@ const Home = () => (
             RoboSub 2025. I've worked as a software and embedded engineer at AeroVironment,
             SpaceX, and Northrop Grumman.
           </Text>
-
-          <Wrap gap={3}>
-            <Button colorPalette="teal" onClick={scrollToId(PROJECTS_ID)}>
-              More about projects
-              <FaArrowDown />
-            </Button>
-            <Button variant="outline" colorPalette="teal" onClick={scrollToId(EXPERIENCE_ID)}>
-              More about my experience
-              <FaArrowDown />
-            </Button>
-          </Wrap>
         </Stack>
       </ContentPanel>
 
@@ -247,28 +226,13 @@ const Home = () => (
       <Gallery images={highlightImages} />
     </GalleryPanel>
 
-    <Box id={PROJECTS_ID} mb={4} scrollMarginTop={{ base: 4, md: 6 }}>
-      <Heading size="2xl" mb={2}>
-        Selected Projects
-      </Heading>
-      <Text color="blackAlpha.700">
-        Ordered from the work I want to surface first to the earlier projects that led into it.
-      </Text>
-    </Box>
-
     <SimpleGrid columns={{ base: 1, lg: 2 }} gap={5} mb={8} alignItems="stretch">
       {projectCards.map(project => (
         <ProjectCard key={project.title} {...project} />
       ))}
     </SimpleGrid>
 
-    <ContentPanel
-      id={EXPERIENCE_ID}
-      p={{ base: 5, md: 7 }}
-      mb={8}
-      // Leaves breathing room above the heading when scrolled to from the hero.
-      scrollMarginTop={{ base: 4, md: 6 }}
-    >
+    <ContentPanel p={{ base: 5, md: 7 }} mb={8}>
       <Heading size="2xl" mb={5}>
         Experience
       </Heading>
