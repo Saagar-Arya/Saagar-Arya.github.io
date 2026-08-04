@@ -196,11 +196,12 @@ const Home = () => (
             Saagar Arya
           </Heading>
           <Text fontSize="lg" color="blackAlpha.800">
-            I build robots and the software that runs them. I'm studying Electrical &
-            Computer Engineering and Computer Science at Duke, graduating December 2026, and
-            I'm President of the Robotics Club, where our 40-person team placed 7th of 56 at
-            RoboSub 2025. I've worked as a software and embedded engineer at AeroVironment,
-            SpaceX, and Northrop Grumman.
+            I build robots and the software that runs them. At Duke, I'm studying Electrical &
+            Computer Engineering and Computer Science, graduating December 2026. Past roles
+            include software and embedded engineering at AeroVironment, SpaceX, and Northrop
+            Grumman. I am the President of Duke Robotics Club, where our 40-person team placed
+            7th of 56 at RoboSub 2025; I co-founded a startup building force-sensing hardware
+            for neurosurgery and am part of the Marine Robotics and Remote Sensing Lab.
           </Text>
         </Stack>
       </ContentPanel>
