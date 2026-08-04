@@ -7,18 +7,15 @@ import { dukeRoboticsPublications } from '../data/publications';
 const images = galleryImages([
   'crush-auv-2026.jpg',
   'oogway-auv-2026.jpg',
+  'saagar_and_crush.jpg',
   'oogway-auv-in-pool.jpg',
   'hydrophone-array-pcb-layout.png',
   'hydrophone-signal-processing-toa.png',
-  'robosub-auv-assembled.jpg',
   'oogway-auv-render.png',
-  'oogway-auv-cad-assembly.png',
   'mini-auv-cad-render.png',
   'torpedo-launcher-mounted.jpg',
   'titanium-top-plate-installed.jpg',
-  'electronics-capsule-cad.png',
   'drc-honeycomb-top-plate-cad.png',
-  'hull-cfd-streamlines.png',
   'hull-cfd-velocity-field.png',
 ]);
 

@@ -169,12 +169,11 @@ const ProjectCard = ({ title, description, to, images }: ProjectCardData) => (
 
 const highlightImages = galleryImages([
   'crush-auv-2026.jpg',
-  'oogway-auv-in-pool.jpg',
-  'head-clamp-v3-live-readout.jpg',
-  'hydrophone-array-pcb-layout.png',
-  'ice-floe-segmentation-overlay.jpg',
   'oogway-auv-2026.jpg',
+  'head-clamp-v3-live-readout.jpg',
+  'ice-floe-segmentation-overlay.jpg',
   'lidar-point-cloud-campus.png',
+  'hydrophone-array-pcb-layout.png',
   'micro-quadcopter-built.jpg',
   'effortless-beetleweight-cad-render.png',
 ]);

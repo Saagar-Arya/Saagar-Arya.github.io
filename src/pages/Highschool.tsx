@@ -34,14 +34,12 @@ const tabs: HighschoolTab[] = [
     value: 'combat',
     label: 'Combat Robots',
     images: galleryImages([
-      'effortless-beetleweight-cad-render.png',
-      'effortless-wheel-guards.jpg',
-      'combat-robots-at-competition.jpg',
-      'lawnmower-horizontal-spinner-cad.png',
       'lawnmower-robot-built.jpg',
       'wedge-antweight-robot-internals.png',
-      'effortless-mini-antweight-built.jpg',
-      'effortless-mini-cad-render.jpg',
+      'combat-robots-at-competition.jpg',
+      'lawnmower-horizontal-spinner-cad.png',
+      'effortless-beetleweight-cad-render.png',
+      'effortless-wheel-guards.jpg',
     ]),
     pages: [
       '/assets/PDFPIctures/Saagar Combat Robots_Page_1.jpg',

@@ -4,13 +4,14 @@ import { headClampPublications } from '../data/publications';
 
 const images = galleryImages([
   'head-clamp-v3-live-readout.jpg',
+  'head-clamp-ui.png',
+  'head-clamp-5-trials.png',
   'head-clamp-instrumented-rig.jpg',
-  'head-clamp-pressure-dashboard.png',
+  'head-clamp-amplification-near-pin.jpg',
+  'head-clamp-skull-demo.png',
   'head-clamp-esp32-pcb.jpg',
   'sensor-pin-load-test.jpg',
   'strain-gauge-pin-prototype.jpg',
-  'sensing-pin-closeup.jpg',
-  'head-clamp-skull-demo.png',
 ]);
 
 const HeadClamp = () => (
