@@ -6,6 +6,7 @@ const images = galleryImages([
   'head-clamp-v3-live-readout.jpg',
   'head-clamp-ui.png',
   'head-clamp-5-trials.png',
+  'head-clamp-dmd.jpg',
   'head-clamp-instrumented-rig.jpg',
   'head-clamp-amplification-near-pin.jpg',
   'head-clamp-skull-demo.png',
