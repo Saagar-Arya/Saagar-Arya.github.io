@@ -29,7 +29,7 @@ export const headClampPublications: Publication[] = [
     title: 'Developing a Digital System to Monitor Head Clamp Forces During Neurosurgery',
     venue: 'Frontiers in Biomedical Devices, V001T08A001',
     year: 2026,
-    url: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=cVxr6WgAAAAJ&citation_for_view=cVxr6WgAAAAJ:qjMakFHDy7sC',
+    url: 'https://asmedigitalcollection.asme.org/BIOMED/proceedings/DMD2026/89435/V001T08A001/1233424',
     authors: 'A. Li, S. Arya, A. Brusoe, L. Chetkof, E. Johnson',
   },
 ];

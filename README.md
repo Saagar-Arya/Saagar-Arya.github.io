@@ -59,7 +59,7 @@ so images of any aspect ratio can be mixed without the carousel changing height.
 
 ## Content that goes stale
 
-- `public/Saagar_Arya_HWSW_Resume_2026_08_02.pdf`: linked from the nav; the filename is
+- `public/Saagar_Arya_HWSW_Resume_2026_09_04.pdf`: linked from the nav; the filename is
   the version. Update `RESUME_PDF` in `src/data/site.ts` when you replace it.
 - Project copy lives inline in `src/pages/*.tsx` and in `projectCards` in `Home.tsx`.
   The Home card and the detail page each carry their own description, so keep them in sync.
