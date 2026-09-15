@@ -35,7 +35,7 @@ const experience: Role[] = [
   {
     org: 'AeroVironment',
     title: 'Software Engineering Intern, Loitering & Munition Systems',
-    period: 'Jun 2026 - Present',
+    period: 'Jun 2026 - Aug 2026',
     detail:
       'Autonomy and task planning software in ROS2 for Switchblade aircraft, plus a tracker fusing vision with onboard sensor data.',
   },
